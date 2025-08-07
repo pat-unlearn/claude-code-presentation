@@ -1,0 +1,131 @@
+/* Unlearn.ai slide theme: dark cover, clean content slides */
+
+/* Title/Cover and End slide specific styling */
+.slidev-layout-cover,
+.slidev-layout-end,
+.slidev-page-1,
+.slidev-layout-cover .slidev-layout,
+.slidev-layout-end .slidev-layout {
+  background: linear-gradient(135deg, #2D1B69 0%, #1A0F3A 50%, #0F0621 100%) !important;
+}
+
+/* Content slides - clean Unlearn.ai style */
+.slidev-page:not(.slidev-layout-cover) {
+  background: #fafafa !important;
+  color: #2d1b69 !important;
+}
+
+/* Fix v-clicks list item color consistency */
+.slidev-page:not(.slidev-layout-cover) li {
+  color: #374151 !important;
+}
+
+/* Unlearn.ai logo on content slides */
+.slidev-page:not(.slidev-layout-cover)::before {
+  content: '';
+  position: absolute;
+  top: 2rem;
+  right: 2rem;
+  width: 3rem;
+  height: 3rem;
+  background-image: url('/images/unlearn-logo.svg');
+  background-size: contain;
+  background-repeat: no-repeat;
+  opacity: 0.8;
+  z-index: 10;
+}
+
+/* Simple typography */
+h1 {
+  color: #2d1b69;
+  font-weight: 600;
+}
+
+h2 {
+  color: #2d1b69;
+  font-weight: 500;
+}
+
+p {
+  color: #374151;
+  line-height: 1.5;
+}
+
+/* Purple accent text */
+.text-gradient-primary, .text-gradient-accent {
+  color: #8b5cf6 !important;
+  background: none !important;
+}
+
+/* Proper spacing with footer accommodation */
+.slidev-page:not(.slidev-layout-cover):not(.slidev-layout-end) .slidev-layout {
+  padding: 0.75rem 2rem 2.5rem 2rem;
+  max-height: calc(100vh - 2rem);
+  overflow-y: auto;
+  box-sizing: border-box;
+}
+
+/* Cover and end slides don't need footer space */
+.slidev-page.slidev-layout-cover .slidev-layout,
+.slidev-page.slidev-layout-end .slidev-layout {
+  padding: 2rem;
+}
+
+
+/* Simpler component constraints */
+.card-clean {
+  background: white;
+  border-radius: 0.5rem;
+  border: 1px solid #e5e7eb;
+  padding: 1rem;
+}
+
+/* Button styles */
+.btn-primary {
+  background: #2D1B69;
+  color: white;
+  padding: 0.5rem 1rem;
+  border-radius: 0.375rem;
+  border: none;
+  cursor: pointer;
+  font-weight: 500;
+  transition: all 0.2s;
+}
+
+.btn-primary:hover {
+  background: #1A0F3A;
+}
+
+.btn-primary:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* Clean spacing without fighting Slidev */
+
+
+/* Code blocks */
+.slidev-page:not(.slidev-layout-cover) .shiki {
+  background-color: #f1f5f9 !important;
+  border: 1px solid #e2e8f0 !important;
+  border-radius: 8px !important;
+  padding: 1rem !important;
+}
+
+
+/* Remove pseudo-element footer - using global-bottom.vue instead */
+
+/* Simple layout adjustments - minimal interference */
+.slidev-layout-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.slidev-layout-section {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
