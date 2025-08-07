@@ -149,6 +149,7 @@ export default defineConfig({
     'border-primary-200',
     'border-primary-300',
     'border-gray-200',
+    'border-unlearn-blue',
     'bg-gray-50',
     'from-primary-600',
     'to-primary-700',

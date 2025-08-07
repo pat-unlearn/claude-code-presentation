@@ -1,0 +1,12 @@
+  Create a PRD for compelling presentation using a modern slide building framework to showcase Claude Code's advance agentic workflows.
+  Use analogies and/or metaphors to help explain some of the more niche concepts.
+  Check out the unlearn.ai marketing page for graphics and stylistic color schemes.
+  Use playwright-mcp to analyze the UI as the slides are developed and leverage any of the specialized agents as you see fit.
+
+  In particular, it would be great if we had some demos for the following claude code concepts
+  - Planning mode
+  - CLAUDE.md
+  - MCP Servers
+  - Subagents
+  - Hooks
+  - Slash Commands

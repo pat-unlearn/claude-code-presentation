@@ -1,11 +1,11 @@
 <template>
-  <div class="p-4 card-clean h-full flex flex-col">
-    <h3 class="text-lg font-semibold text-gray-800 mb-4">Planning Mode: Strategic Thinking First</h3>
+  <div class="p-3 card-clean flex flex-col max-h-screen">
+    <h3 class="text-base font-semibold text-gray-800 mb-3">Planning Mode: Strategic Thinking First</h3>
 
-    <div class="grid grid-cols-2 gap-4 flex-1">
+    <div class="grid grid-cols-2 gap-3 flex-1 min-h-0">
       <!-- Planning Interface -->
-      <div class="space-y-4 flex flex-col">
-        <div class="bg-gray-900 rounded-lg p-4 flex-1 overflow-y-auto font-mono text-sm">
+      <div class="flex flex-col h-full min-h-0">
+        <div class="bg-gray-900 rounded-lg p-3 flex-1 overflow-y-auto font-mono text-xs scroll-smooth max-h-72">
           <div class="text-blue-400 mb-2">🧠 Planning Session</div>
           <div class="text-gray-300">
             <div v-if="!isPlanning" class="text-green-400">
@@ -25,38 +25,43 @@
           </div>
         </div>
 
-        <div class="flex gap-3">
+        <div class="flex gap-2 mt-2">
           <button @click="startPlanning"
                   :disabled="isPlanning"
-                  class="btn-primary">
+                  class="px-4 py-2 bg-blue-600 text-white rounded text-sm font-medium hover:bg-blue-700 transition-colors">
             {{ isPlanning ? 'Planning...' : 'Start Planning' }}
           </button>
-          <button @click="reset" class="px-6 py-3 border border-gray-300 rounded-lg">
+          <button @click="reset" class="px-4 py-2 border border-gray-300 rounded text-sm">
             Reset
           </button>
         </div>
       </div>
 
       <!-- Planning Benefits -->
-      <div class="space-y-2 flex flex-col">
-        <div class="p-3 bg-blue-50 rounded-lg border-l-4 border-blue-400 flex-1">
-          <h4 class="font-semibold text-blue-800 mb-1 text-sm">🎯 Requirements</h4>
+      <div class="flex flex-col justify-center h-full space-y-2">
+        <div class="px-2 py-1 bg-blue-50 rounded border-l-4 border-blue-400">
+          <h5 class="font-semibold text-blue-800 text-xs">🎯 Requirements Analysis</h5>
+          <p class="text-blue-700" style="font-size: 14px;">Context and project needs</p>
         </div>
 
-        <div class="p-3 bg-green-50 rounded-lg border-l-4 border-green-400 flex-1">
-          <h4 class="font-semibold text-green-800 mb-1 text-sm">🏗️ Architecture</h4>
+        <div class="px-2 py-1 bg-green-50 rounded border-l-4 border-green-400">
+          <h5 class="font-semibold text-green-800 text-xs">🏗️ Architecture Design</h5>
+          <p class="text-green-700" style="font-size: 14px;">System structure and data flow</p>
         </div>
 
-        <div class="p-3 bg-purple-50 rounded-lg border-l-4 border-purple-400 flex-1">
-          <h4 class="font-semibold text-purple-800 mb-1 text-sm">⚠️ Risk Analysis</h4>
+        <div class="px-2 py-1 bg-purple-50 rounded border-l-4 border-purple-400">
+          <h5 class="font-semibold text-purple-800 text-xs">⚠️ Risk Assessment</h5>
+          <p class="text-purple-700" style="font-size: 14px;">Issues and edge cases</p>
         </div>
 
-        <div class="p-3 bg-orange-50 rounded-lg border-l-4 border-orange-400 flex-1">
-          <h4 class="font-semibold text-orange-800 mb-1 text-sm">📋 Implementation</h4>
+        <div class="px-2 py-1 bg-orange-50 rounded border-l-4 border-orange-400">
+          <h5 class="font-semibold text-orange-800 text-xs">📋 Implementation Plan</h5>
+          <p class="text-orange-700" style="font-size: 14px;">Development strategy</p>
         </div>
 
-        <div v-if="showResults" class="p-3 bg-green-100 rounded-lg border-l-4 border-green-500 flex-1">
-          <h4 class="font-semibold text-green-800 mb-1 text-sm">✨ Ready</h4>
+        <div v-if="showResults" class="px-2 py-1 bg-green-100 rounded border-l-4 border-green-500">
+          <h5 class="font-semibold text-green-800 text-xs">✨ Ready to Execute</h5>
+          <p class="text-green-700" style="font-size: 14px;">Time to code!</p>
         </div>
       </div>
     </div>
@@ -79,7 +84,7 @@ const planningSteps = [
   {
     type: 'analysis',
     title: '📊 Context Analysis',
-    content: 'Found: FastAPI backend, PostgreSQL database, Jest testing. Security requires rate limiting and session management.'
+    content: 'Found: FastAPI backend, PostgreSQL database, Pytest testing. Security requires rate limiting and session management.'
   },
   {
     type: 'thinking',
@@ -114,6 +119,13 @@ const startPlanning = () => {
     if (index < planningSteps.length) {
       visibleSteps.value.push(planningSteps[index])
       setTimeout(() => showNextStep(index + 1), 2000)
+      // Auto-scroll to bottom as new content appears
+      setTimeout(() => {
+        const terminal = document.querySelector('.bg-gray-900')
+        if (terminal) {
+          terminal.scrollTop = terminal.scrollHeight
+        }
+      }, 2100)
     } else {
       isPlanning.value = false
       setTimeout(() => {

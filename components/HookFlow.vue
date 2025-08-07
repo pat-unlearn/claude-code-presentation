@@ -1,42 +1,68 @@
 <template>
-  <div class="p-3 card-clean">
-    <h3 class="text-base font-semibold text-gray-800 mb-2">Claude Code Hooks in Action</h3>
-    
-    <div class="grid grid-cols-2 gap-2">
-      <!-- Hook Buttons -->
-      <div class="space-y-2">
-        <button
-          @click="runFlow('validation')"
-          :disabled="currentFlow !== 'idle'"
-          class="w-full px-3 py-2 bg-red-600 text-white rounded text-sm hover:bg-red-700 disabled:opacity-50"
-        >
-          🛡️ UserPromptSubmit
-        </button>
-        <button
-          @click="runFlow('enhancement')"
-          :disabled="currentFlow !== 'idle'"
-          class="w-full px-3 py-2 bg-blue-600 text-white rounded text-sm hover:bg-blue-700 disabled:opacity-50"
-        >
-          ⚡ PreToolUse
-        </button>
-        <button
-          @click="runFlow('logging')"
-          :disabled="currentFlow !== 'idle'"
-          class="w-full px-3 py-2 bg-green-600 text-white rounded text-sm hover:bg-green-700 disabled:opacity-50"
-        >
-          📊 PostToolUse
-        </button>
-        <button
-          @click="runFlow('quality')"
-          :disabled="currentFlow !== 'idle'"
-          class="w-full px-3 py-2 bg-purple-600 text-white rounded text-sm hover:bg-purple-700 disabled:opacity-50"
-        >
-          🎯 Stop Hook
-        </button>
+  <div class="p-3 card-clean flex flex-col">
+    <h3 class="text-base font-semibold text-gray-800 mb-3">Claude Code Hooks in Action</h3>
+
+    <div class="grid grid-cols-2 gap-3 flex-1">
+      <!-- Left Column: Hook Controls and Details -->
+      <div class="flex flex-col space-y-3">
+        <!-- Hook Buttons -->
+        <div class="space-y-2">
+          <button
+            @click="runFlow('validation')"
+            :disabled="currentFlow !== 'idle'"
+            class="w-full px-3 py-2 bg-red-600 text-white rounded text-sm hover:bg-red-700 disabled:opacity-50 transition-colors"
+          >
+            🛡️ UserPromptSubmit - Block Dangerous Commands
+          </button>
+          <button
+            @click="runFlow('enhancement')"
+            :disabled="currentFlow !== 'idle'"
+            class="w-full px-3 py-2 bg-blue-600 text-white rounded text-sm hover:bg-blue-700 disabled:opacity-50 transition-colors"
+          >
+            ⚡ PreToolUse - Enhance Parameters
+          </button>
+          <button
+            @click="runFlow('logging')"
+            :disabled="currentFlow !== 'idle'"
+            class="w-full px-3 py-2 bg-green-600 text-white rounded text-sm hover:bg-green-700 disabled:opacity-50 transition-colors"
+          >
+            📊 PostToolUse - Log & Notify
+          </button>
+          <button
+            @click="runFlow('quality')"
+            :disabled="currentFlow !== 'idle'"
+            class="w-full px-3 py-2 bg-purple-600 text-white rounded text-sm hover:bg-purple-700 disabled:opacity-50 transition-colors"
+          >
+            🎯 Stop Hook - Quality Gates
+          </button>
+        </div>
+
+        <!-- Hook Description -->
+        <div class="bg-gray-50 rounded-lg p-3 flex-1">
+          <h4 class="font-semibold text-gray-800 text-sm mb-2">How Hooks Work:</h4>
+          <div class="space-y-2 text-xs text-gray-600">
+            <div class="flex items-start">
+              <span class="text-red-500 mr-2">1.</span>
+              <span><strong>UserPromptSubmit:</strong> Validates user input before Claude processes it</span>
+            </div>
+            <div class="flex items-start">
+              <span class="text-blue-500 mr-2">2.</span>
+              <span><strong>PreToolUse:</strong> Modifies tool parameters before execution</span>
+            </div>
+            <div class="flex items-start">
+              <span class="text-green-500 mr-2">3.</span>
+              <span><strong>PostToolUse:</strong> Processes results after tool execution</span>
+            </div>
+            <div class="flex items-start">
+              <span class="text-purple-500 mr-2">4.</span>
+              <span><strong>Stop:</strong> Runs quality checks before completing</span>
+            </div>
+          </div>
+        </div>
       </div>
-      
-      <!-- Hook Log -->
-      <div class="bg-gray-900 rounded-lg p-2 h-32 overflow-y-auto font-mono text-xs">
+
+      <!-- Right Column: Hook Execution Log -->
+      <div class="bg-gray-900 rounded-lg p-3 overflow-y-auto font-mono text-xs flex flex-col">
         <div class="text-blue-400 mb-1">Hook Execution Log:</div>
         <div v-for="(log, index) in logs" :key="index" class="mb-1">
           <div class="flex items-start">
@@ -105,18 +131,18 @@ const flows = {
 const runFlow = (flowType) => {
   currentFlow.value = flowType
   logs.value = []
-  
+
   const flow = flows[flowType]
-  
+
   flow.steps.forEach((step, index) => {
     setTimeout(() => {
       logs.value.push(step)
-      
+
       // Keep only last 3 logs
       if (logs.value.length > 3) {
         logs.value.shift()
       }
-      
+
       if (index === flow.steps.length - 1) {
         setTimeout(() => {
           currentFlow.value = 'idle'

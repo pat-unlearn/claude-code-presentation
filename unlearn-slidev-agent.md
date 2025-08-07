@@ -1,7 +1,7 @@
 # Unlearn Slidev Agent
 
 ## Agent Purpose
-Specialized agent for creating professional Slidev presentations following Unlearn.ai design standards and best practices learned from Claude Code presentation development.
+Specialized agent for creating professional Slidev presentations following Unlearn.ai design standards and best practices learned from Claude Code presentation development. Uses the playwright-mcp to gain visual context into the UI.
 
 ## Core Expertise
 - **Slidev Framework**: Vue 3 + Vite-based presentation system

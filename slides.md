@@ -76,6 +76,10 @@ layout: default
   </p>
 </div>
 
+<div class="mt-4 text-xs text-gray-500">
+  *UC Irvine research (2008) - Gloria Mark study on workplace interruptions
+</div>
+
 </v-clicks>
 
 ---
@@ -186,22 +190,10 @@ layout: default
 layout: default
 ---
 
-# Planning Mode: Think Before You Code
-## How Claude Code Thinks Strategically
+## Planning Mode: Think Before You Code
+### How Claude Code Thinks Strategically
 
-<div class="h-4/5 flex flex-col">
-<PlanningModeDemo class="flex-1" />
-</div>
-
----
-layout: default
----
-
-# CLAUDE.md: Your Project's DNA
-## The Foundation of Context Engineering
-
-<ClaudeMdEditor />
-
+<PlanningModeDemo />
 ---
 layout: default
 ---
@@ -210,7 +202,7 @@ layout: default
 ## Before vs After CLAUDE.md
 
 <div class="grid grid-cols-2 gap-6 mt-4">
-  <div class="p-4 bg-red-50 border-l-4 border-red-400 rounded-lg">
+  <div v-click class="p-4 bg-red-50 border-l-4 border-red-400 rounded-lg">
     <h3 class="font-bold mb-4 text-red-800">❌ Without Context</h3>
     <div class="space-y-3 text-sm">
       <div>
@@ -228,7 +220,7 @@ layout: default
     </div>
   </div>
   
-  <div class="p-4 bg-green-50 border-l-4 border-green-400 rounded-lg">
+  <div v-click class="p-4 bg-green-50 border-l-4 border-green-400 rounded-lg">
     <h3 class="font-bold mb-4 text-green-800">✅ With CLAUDE.md</h3>
     <div class="space-y-3 text-sm">
       <div>
@@ -252,6 +244,70 @@ layout: default
     🎯 Context = Consistency: Every interaction builds on your established patterns
   </p>
 </div>
+
+---
+layout: default
+---
+
+## CLAUDE.md: Your Project's DNA
+### The Foundation of Context Engineering
+
+<ClaudeMdEditor />
+
+---
+layout: default
+---
+
+# What is MCP?
+## Model Context Protocol: Claude's Power-Up System
+
+<v-clicks>
+
+**Think of Claude like a smartphone:**
+- 📱 **Built-in apps** - Claude's native tools (Read, Write, Bash, etc.)
+- 🔌 **App Store** - MCP servers add specialized capabilities
+- 🚀 **Power-ups** - Each MCP server = new superpowers
+
+**The Smartphone Analogy:**
+
+<div class="grid grid-cols-2 gap-6 mt-6">
+  <div class="p-4 bg-blue-50 rounded-lg border-l-4 border-blue-400">
+    <h3 class="font-bold mb-3 text-blue-800">📱 Your Phone</h3>
+    <ul class="space-y-2 text-sm text-blue-700">
+      <li>Camera app for photos</li>
+      <li>Maps app for navigation</li>
+      <li>Banking app for finances</li>
+      <li>Each app has specialized tools</li>
+    </ul>
+  </div>
+  
+  <div class="p-4 bg-green-50 rounded-lg border-l-4 border-green-400">
+    <h3 class="font-bold mb-3 text-green-800">🤖 Claude + MCP</h3>
+    <ul class="space-y-2 text-sm text-green-700">
+      <li>playwright-mcp for browser automation</li>
+      <li>database-mcp for SQL queries</li>
+      <li>slack-mcp for team communication</li>
+      <li>Each server adds domain expertise</li>
+    </ul>
+  </div>
+</div>
+
+</v-clicks>
+
+<div v-click class="mt-6 p-4 bg-purple-50 rounded border-l-4 border-purple-400 text-center">
+  <p class="text-purple-800 font-semibold">
+    🔌 <strong>Result:</strong> Claude becomes a universal interface to your entire tech stack
+  </p>
+</div>
+
+---
+layout: default
+---
+
+## MCP Servers: Extending Claude's Reach
+### Beyond Built-in Tools: Third-party Integrations
+
+<McpServersDemo />
 
 ---
 layout: default
@@ -283,36 +339,32 @@ layout: default
 </div>
 
 ---
-layout: two-cols
+layout: default
 ---
 
 # Subagent Architecture
 ## How Specialized Agents Work
 
-## Agent Types
-
-**🔒 Security Agent**  
-OWASP scanning, auth review, input validation
-
-**📚 Documentation Agent**  
-API docs, code comments, setup guides
-
-**✅ Validation Agent**  
-Test suites, coverage, quality gates
-
-::right::
-
-## Orchestration Flow
-
-**1.** User requests complex task
-
-**2.** Claude analyzes and plans approach  
-
-**3.** Multiple agents deploy in parallel
-
-**4.** Results combined & validated
-
----
+<div class="grid grid-cols-2 gap-6 mt-4">
+  <div class="p-4 bg-blue-50 rounded-lg border-l-4 border-blue-400">
+    <h3 class="font-bold mb-3 text-blue-800">Specialized Agent Types</h3>
+    <ul class="space-y-2 text-sm">
+      <li><strong>⚛️ Frontend Agent</strong><br>React components, UI/UX, responsive design</li>
+      <li><strong>🖥️ Backend Agent</strong><br>APIs, databases, business logic</li>
+      <li><strong>🧪 Testing Agent</strong><br>Unit tests, integration tests, coverage</li>
+    </ul>
+  </div>
+  
+  <div class="p-4 bg-green-50 rounded-lg border-l-4 border-green-400">
+    <h3 class="font-bold mb-3 text-green-800">Orchestration Agents</h3>
+    <ol class="space-y-2 text-sm">
+      <li>User requests complex task</li>
+      <li>Claude analyzes and plans approach</li>
+      <li>Multiple agents deploy in parallel</li>
+      <li>Results combined & validated</li>
+    </ol>
+  </div>
+</div>
 
 <div class="mt-6 p-4 bg-purple-50 rounded border-l-4 border-purple-400 text-center">
   <p class="text-purple-800 font-semibold">
@@ -334,48 +386,53 @@ layout: center
 ---
 
 # Claude Code Hooks
-## <span class="text-gradient-accent font-semibold">"Custom Shell Scripts for AI Workflows"</span>
+## <span class="text-gradient-accent font-semibold">Custom Shell Scripts for AI Workflows</span>
 
 <v-clicks>
 
 **What are hooks?** Custom shell scripts that execute at specific points in Claude's workflow to enforce your team's policies and integrate with your tools.
 
-<div class="mt-4 space-y-3">
-  <div class="p-3 card-clean border-l-4 border-red-500">
-    <h3 class="font-bold mb-1 text-sm text-gray-800">🛡️ UserPromptSubmit Hook</h3>
-    <p class="text-sm text-gray-600">Validates and blocks dangerous commands</p>
+<div class="mt-3 space-y-2">
+  <div class="p-2 card-clean border-l-4 border-red-500">
+    <h4 class="font-bold mb-1 text-xs text-gray-800">🛡️ UserPromptSubmit Hook</h4>
+    <h5 class="text-xs text-gray-600">Validates and blocks dangerous commands</h5>
   </div>
   
-  <div class="p-3 card-clean border-l-4 border-unlearn-blue">
-    <h3 class="font-bold mb-1 text-sm text-gray-800">⚡ PreToolUse Hook</h3>
-    <p class="text-sm text-gray-600">Enhances parameters with team context</p>
+  <div class="p-2 card-clean border-l-4 border-unlearn-blue">
+    <h4 class="font-bold mb-1 text-xs text-gray-800">⚡ PreToolUse Hook</h4>
+    <h5 class="text-xs text-gray-600">Enhances parameters with team context</h5>
   </div>
   
-  <div class="p-3 card-clean border-l-4 border-green-500">
-    <h3 class="font-bold mb-1 text-sm text-gray-800">📊 PostToolUse Hook</h3>
-    <p class="text-sm text-gray-600">Logs to dashboard, sends notifications</p>
+  <div class="p-2 card-clean border-l-4 border-green-500">
+    <h4 class="font-bold mb-1 text-xs text-gray-800">📊 PostToolUse Hook</h4>
+    <h5 class="text-xs text-gray-600">Logs to dashboard, sends notifications</h5>
   </div>
   
-  <div class="p-3 card-clean border-l-4 border-purple-500">
-    <h3 class="font-bold mb-1 text-sm text-gray-800">🎯 Stop Hook</h3>
-    <p class="text-sm text-gray-600">Quality gates and reporting</p>
+  <div class="p-2 card-clean border-l-4 border-purple-500">
+    <h4 class="font-bold mb-1 text-xs text-gray-800">🎯 Stop Hook</h4>
+    <h5 class="text-xs text-gray-600">Quality gates and reporting</h5>
   </div>
 </div>
 
 </v-clicks>
 
 ---
+layout: default
+---
 
 # Hooks in Action
+## Automate Your Development Workflow
 
-<HookFlow />
+<div class="h-full flex flex-col">
+  <HookFlow />
+</div>
 
 ---
 layout: center
 ---
 
-# Slash Commands
-## <span class="text-gradient-primary font-semibold">"The Power User's Toolkit"</span>
+## Slash Commands
+### <span class="text-gradient-primary font-semibold">"The Power User's Toolkit"</span>
 
 <div class="grid grid-cols-2 gap-4 mt-6">
   <div v-click class="p-4 bg-white rounded-lg border-l-4 border-green-500">
@@ -400,10 +457,15 @@ layout: center
 </div>
 
 ---
+layout: default
+---
 
-# Slash Commands Demo
+## Slash Commands Demo
+### Power User Toolkit at Your Fingertips
 
-<CommandPalette />
+<div class="h-full flex flex-col">
+  <CommandPalette />
+</div>
 
 ---
 layout: section
@@ -478,35 +540,36 @@ layout: center
 
 
 ---
-layout: two-cols
+layout: default
 ---
 
 # Specialized Agent Orchestration
 ## How Agents Handle Complex Tasks
 
-::left::
 
-**🎯 Task: FastAPI Authentication System**
-- JWT token management
-- Pydantic user models  
-- Password reset endpoints
-- Rate limiting middleware
-- Comprehensive pytest suite
+**🎯 Task: Build User Dashboard**
+- React component architecture
+- REST API endpoints
+- User authentication
+- Data visualization charts
+- Comprehensive test coverage
 
-::right::
 
-**🔒 Security Agent**  
-Reviews JWT implementation, validates password policies, checks for auth vulnerabilities
+**⚛️ Frontend Agent**  
+Creates React components, implements responsive design, handles state management
 
-**🐍 Python Expert Agent**  
-Ensures FastAPI best practices, proper type hints, Pydantic model validation
+**🖥️ Backend Agent**  
+Builds API endpoints, sets up database models, handles authentication logic
 
-**✅ Testing Agent**  
-Creates pytest fixtures, async test cases, mocks external dependencies
+**🧪 Testing Agent**  
+Writes unit tests, integration tests, sets up test automation pipeline
 
----
 
-**✨ Three specialists working in parallel, each focused on their domain expertise**
+<div class="mt-6 p-4 bg-purple-50 rounded border-l-4 border-purple-400 text-center">
+  <p class="text-purple-800 font-semibold">
+    ✨ Three specialists working in parallel, each focused on their domain expertise
+  </p>
+</div>
 
 ---
 layout: section
@@ -517,6 +580,16 @@ class: text-center font-sans
 # <span class="text-primary-700 font-bold">Act 4:</span> The Future
 
 ## <span class="text-gray-600 font-medium">Your New Development Paradigm</span>
+
+---
+layout: default
+---
+
+## How This Presentation Was Built
+### Real Claude Code Workflow in Action
+
+<WorkflowDemo />
+
 
 ---
 layout: center
@@ -575,31 +648,33 @@ layout: center
 
 # Getting Started
 
-<div v-click class="mt-6">
-  <h3 class="text-xl font-bold mb-4">🚀 Quick Start Guide</h3>
+<v-clicks>
+
+### 🚀 Quick Start Guide
+
+<div class="grid grid-cols-2 gap-4 mt-6">
+  <div class="p-4 card-clean border-l-4 border-unlearn-blue">
+    <div class="font-bold text-gray-800 mb-2">1. Install Claude Code</div>
+    <code class="text-sm bg-gray-50 px-2 py-1 rounded text-unlearn-blue">npm install -g @anthropic/claude-code</code>
+  </div>
   
-  <div class="grid grid-cols-2 gap-4">
-    <div class="p-4 card-clean border-l-4 border-unlearn-blue">
-      <div class="font-bold text-gray-800 mb-2">1. Install Claude Code</div>
-      <code class="text-sm bg-gray-50 px-2 py-1 rounded text-unlearn-blue">npm install -g @anthropic/claude-code</code>
-    </div>
-    
-    <div class="p-4 card-clean border-l-4 border-unlearn-blue">
-      <div class="font-bold text-gray-800 mb-2">2. Initialize in your project</div>
-      <code class="text-sm bg-gray-50 px-2 py-1 rounded text-unlearn-blue">claude init</code>
-    </div>
-    
-    <div class="p-4 card-clean border-l-4 border-unlearn-blue">
-      <div class="font-bold text-gray-800 mb-2">3. Create your CLAUDE.md file</div>
-      <span class="text-sm text-gray-600">Add project context and standards</span>
-    </div>
-    
-    <div class="p-4 card-clean border-l-4 border-unlearn-blue">
-      <div class="font-bold text-gray-800 mb-2">4. Start orchestrating</div>
-      <code class="text-sm bg-gray-50 px-2 py-1 rounded text-unlearn-blue">claude "Your first task"</code>
-    </div>
+  <div class="p-4 card-clean border-l-4 border-unlearn-blue">
+    <div class="font-bold text-gray-800 mb-2">2. Initialize in your project</div>
+    <code class="text-sm bg-gray-50 px-2 py-1 rounded text-unlearn-blue">claude init</code>
+  </div>
+  
+  <div class="p-4 card-clean border-l-4 border-unlearn-blue">
+    <div class="font-bold text-gray-800 mb-2">3. Create your CLAUDE.md file</div>
+    <span class="text-sm text-gray-600">Add project context and standards</span>
+  </div>
+  
+  <div class="p-4 card-clean border-l-4 border-unlearn-blue">
+    <div class="font-bold text-gray-800 mb-2">4. Start orchestrating</div>
+    <code class="text-sm bg-gray-50 px-2 py-1 rounded text-unlearn-blue">claude "Your first task"</code>
   </div>
 </div>
+
+</v-clicks>
 
 
 ---
@@ -610,19 +685,19 @@ layout: center
 
 <div class="mt-6 space-y-3">
   <div v-click class="p-4 card-clean border-l-4 border-unlearn-blue">
-    <strong class="text-gray-800 text-base">Stop coding. Start orchestrating.</strong>
+    <strong class="text-gray-800 text-base">The future of development is here. Today.</strong>
   </div>
   
   <div v-click class="p-4 card-clean border-l-4 border-purple-500">
-    <strong class="text-gray-800 text-base">Your code, amplified.</strong>
+    <strong class="text-gray-800 text-base">Less coding. More orchestration.</strong>
   </div>
   
   <div v-click class="p-4 card-clean border-l-4 border-green-500">
-    <strong class="text-gray-800 text-base">From keyboard warrior to code conductor.</strong>
+    <strong class="text-gray-800 text-base">Transform completed workflows into specialized agents.</strong>
   </div>
   
   <div v-click class="p-4 card-clean border-l-4 border-orange-500">
-    <strong class="text-gray-800 text-base">The future of development is here. Today.</strong>
+    <strong class="text-gray-800 text-base">Prompt your agents. Get coffee. Pretend it was hard.</strong>
   </div>
 </div>
 
@@ -635,8 +710,13 @@ layout: default
 
 <div class="text-sm space-y-4">
 
+**Developer Productivity & Interruptions:**
+- UC Irvine Study (2008) - Gloria Mark: "23 minutes to regain focus after interruption"
+- Industry Studies: "70+ bugs per 1,000 lines of code created on average"
+- IBM/CISQ Research: "Production bugs cost 4-30x more to fix than design-phase bugs"
+
 **Planning & Bug Reduction:**
-- IBM Systems Science Institute Research (2008): "Bugs cost 4-6x more to fix post-release vs. design phase"
+- IBM Systems Science Institute Research (2008): "Bugs cost 4-6x more to fix post-release vs. design phase"  
 - 2024 Software Development Statistics: "73% of organizations using formal project management meet goals"
 
 **AI Development Efficiency:**

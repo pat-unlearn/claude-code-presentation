@@ -1,0 +1,67 @@
+  Requirements:
+
+  Theme & Narrative:
+  - Hook: "The Lonely Developer" problem - context loss, inefficiency, generic AI responses
+  - Evolution story: From basic tools → Power tools → AI assistants → Full orchestration crew
+  - Transformation: Developers become "Code Conductors" who orchestrate rather than type
+  - Use construction site metaphors consistently (DIY → Power tools → Full renovation crew with project manager)
+
+  Technical Implementation:
+  - Slidev framework with Vue components for interactivity
+  - Dark theme with Unlearn.ai brand colors (#2D4FFF primary blue)
+  - TailwindCSS with custom animations and color schemes
+  - Interactive Vue components with realistic terminal simulations
+
+  Core Features to Demonstrate:
+
+  1. Planning Mode
+    - Interactive component showing strategic thinking before coding
+    - Before/after comparison (4-6 hours → 1 hour)
+    - Step-by-step analysis: Requirements → Architecture → Risks → Implementation
+  2. CLAUDE.md Context Engineering
+    - File editor component showing project DNA concept
+    - Before/after examples (generic Flask → context-aware FastAPI)
+    - Benefits: persistence, standards, business logic
+  3. MCP Servers Extension System
+    - Smartphone app store analogy for extending capabilities
+    - Interactive demo with playwright-mcp and serena-mcp examples
+    - Real browser automation and code analysis scenarios
+  4. Specialized Subagents
+    - Frontend, Backend, and Testing agents working in parallel
+    - Orchestrator that plans then deploys specialized agents
+    - Interactive terminal showing coordinated execution
+  5. Hooks System
+    - "Custom shell scripts for AI workflows" concept
+    - 4 hook types: UserPromptSubmit, PreToolUse, PostToolUse, Stop
+    - Quality gates and team policy enforcement
+  6. Slash Commands
+    - Power user toolkit demonstration
+    - Built-in vs custom command examples
+    - Interactive command palette simulation
+
+  Visual Design:
+  - Clean, developer-focused aesthetic with neon accents
+  - Color scheme: Blue (#3B82F6), Purple (#8B5CF6), Green (#10B981) on dark backgrounds
+  - Smooth transitions and hover effects throughout
+  - Mobile-responsive considerations
+
+  Content Standards:
+  - Include specific metrics and research citations
+  - Show real code examples in all demos
+  - 4-act structure: Problem → Evolution → Transformation → Future
+  - ROI-focused messaging with productivity multipliers
+
+  Key Messages:
+  - "Stop coding. Start orchestrating."
+  - "The 10x developer myth becomes reality through AI teammates"
+  - "Context is everything - AI without context is expensive autocomplete"
+
+  Deliverables:
+  - Interactive Slidev presentation with Vue components
+  - All components should be self-contained with realistic simulations
+  - PDF export capability for offline sharing
+  - Speaker notes for presentation delivery
+  - Getting started guide for audience
+
+  Make every interaction feel authentic with realistic terminal outputs, proper loading states, and smooth animations that
+  demonstrate the power of orchestrated AI development.
