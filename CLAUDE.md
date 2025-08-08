@@ -4,18 +4,19 @@
 Interactive Slidev presentation showcasing Claude Code's capabilities including planning mode, CLAUDE.md context persistence, specialized agents, hooks, and slash commands. The presentation uses a compelling "From Code Monkeys to Code Orchestrators" narrative with construction site analogies.
 
 ## Architecture
-- **Presentation Framework**: Slidev with React components
+- **Presentation Framework**: Slidev with Vue.js components
 - **Styling**: TailwindCSS with custom animations
-- **Interactive Components**: React with hooks for demonstrations
+- **Interactive Components**: Vue.js with composition API for demonstrations
 - **Theme**: Seriph with custom dark mode styling
-- **Build System**: Vite with React plugin
+- **Build System**: Vite with Vue plugin
 
 ## Technology Stack
 - **Core**: Slidev 52.1.0
-- **UI Library**: React 19.1.1 with React DOM
+- **UI Library**: Vue.js 3+ with Composition API
 - **Styling**: TailwindCSS (via Slidev theme)
-- **Build Tool**: Vite with @vitejs/plugin-react
+- **Build Tool**: Vite with Vue plugin
 - **Package Manager**: npm
+- **Development Tools**: playwright-mcp for visual debugging
 
 ## Presentation Structure
 
@@ -68,28 +69,38 @@ Interactive Slidev presentation showcasing Claude Code's capabilities including 
 
 ## Interactive Components
 
-### React Components (`/components/`)
-All components use React hooks and follow consistent styling patterns:
+### Vue Components (`/components/`)
+All components use Vue 3 Composition API and follow consistent styling patterns:
 
-1. **PlanningModeVisualizer.jsx**
+1. **PlanningModeDemo.vue**
    - Shows step-by-step planning process
    - Interactive animation with start button
    - Visual progress indicators
 
-2. **AgentOrchestrator.jsx**
+2. **AgentDashboard.vue**
    - Simulates multiple agents working in parallel
    - Real-time terminal-style output
    - Agent status visualization with animations
 
-3. **HookFlow.jsx**
+3. **HookFlow.vue**
    - Multiple hook execution scenarios
    - Visual flow diagram with progress tracking
    - Terminal log output simulation
 
-4. **CommandPalette.jsx**
+4. **CommandPalette.vue**
    - Interactive command execution
    - Built-in vs custom command categorization
    - Real-time output simulation
+
+5. **McpServersDemo.vue**
+   - Interactive MCP server demonstration
+   - Real-time server status and capabilities
+   - Terminal integration examples
+
+6. **WorkflowDemo.vue**
+   - Complete workflow from prompt to implementation
+   - Shows thinking process and planning phases
+   - Demonstrates real Claude Code usage patterns
 
 ## Styling Guidelines
 - **Color Scheme**: Dark theme with neon accents
@@ -126,18 +137,28 @@ All components use React hooks and follow consistent styling patterns:
 - "The 10x developer myth becomes reality through AI teammates"
 
 ## Technical Implementation Notes
-- All interactive components are self-contained
+- All interactive components are self-contained Vue 3 components
 - Animations use CSS transitions for smooth performance  
-- Components handle their own state management
+- Components use Vue's reactivity system for state management
 - Error states and loading states included
 - Mobile-responsive design considerations
+- **CRITICAL**: Always use playwright-mcp for visual verification during active development
 
 ## Development Workflow
 1. Edit slides.md for content changes
-2. Modify React components in /components/ for interactivity
+2. Modify Vue components in /components/ for interactivity
 3. Update demos/ for example content
 4. Test locally with `npm run dev`
-5. Build for production with `npm run build`
+5. **ALWAYS use playwright-mcp to verify visual changes** - Essential for catching layout issues, formatting problems, and ensuring components render correctly
+6. Build for production with `npm run build`
+
+## Visual Development Guidelines
+- **playwright-mcp is MANDATORY** for all UI changes
+- Use screenshots to verify slide layouts before and after changes
+- Check component animations and interactions visually
+- Verify responsive behavior across different screen sizes
+- Ensure proper spacing, typography, and color consistency
+- Test v-click animations and slide transitions
 
 ## Deployment
 - Static site generation via Slidev build

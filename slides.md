@@ -38,7 +38,7 @@ layout: cover
   
   <div class="pt-8">
     <button @click="$slidev.nav.next" class="px-8 py-4 bg-white/10 backdrop-blur text-white border border-white/20 rounded-lg font-semibold text-lg hover:bg-white/20 transition-all duration-200 transform hover:scale-105 cursor-pointer">
-      Explore the Future →
+      Let's go! →
     </button>
   </div>
 </div>
@@ -55,57 +55,42 @@ transition: slide-left
 layout: default
 ---
 
-# The Development Crisis
-## Why Smart Developers Are Struggling
+# The Development Reality
+## Why Context-Aware AI Changes Everything
 
-<v-clicks>
+<div class="grid grid-cols-2 gap-8 mt-6">
 
-**The Reality of Modern Development:**
-- **~23 minutes** to regain focus after each interruption*
-- **70+ bugs** per 1,000 lines of code created on average
-- **4-30x higher** cost to fix bugs found in production vs. design phase
+<div v-click class="space-y-6">
 
-**Context Issues:**
-- AI forgets project context between sessions  
-- No understanding of team conventions  
+**The Problem:**
+- **~23 minutes** to regain focus after interruption*
+- **70+ bugs** per 1,000 lines of code on average
+- AI forgets your project context between sessions
 - Generic responses don't fit your codebase
 
-<div class="mt-4 p-4 bg-red-50 rounded-lg border-l-4 border-red-400">
+<div class="p-4 bg-red-50 rounded-lg border-l-4 border-red-400">
   <p class="text-red-800 font-semibold">
-    💡 <strong>The core issue:</strong> AI without context is just expensive autocomplete
+    💡 AI without context is just expensive autocomplete
   </p>
 </div>
 
-<div class="mt-4 text-xs text-gray-500">
-  *UC Irvine research (2008) - Gloria Mark study on workplace interruptions
 </div>
 
-</v-clicks>
+<div v-click class="space-y-6">
 
----
-layout: default
----
+**What makes it different:**
+- Project awareness & team standards
+- Business context & domain knowledge  
+- Persistent memory across sessions
+- Extensibility
 
-# Context is Everything
-## The Missing Piece in AI Development
+</div>
 
-**Traditional AI Coding Tools:**
-```python
-# ai "write a login function"
-# Generic code, doesn't match your patterns
-# No knowledge of your auth system
-```
+</div>
 
-**What Developers Actually Need:**
-
-<v-clicks>
-
-- Project awareness - Understanding your specific codebase
-- Team standards - Following your conventions automatically  
-- Business context - Knowing your domain and requirements
-- UI feedback loops - Specific to frontend development
-
-</v-clicks>
+<div class="mt-6 text-xs text-gray-500">
+  *UC Irvine research (2008) - Gloria Mark study on workplace interruptions
+</div>
 
 ---
 transition: slide-left
@@ -114,29 +99,69 @@ background: linear-gradient(135deg, #dbeafe 0%, #f0f9ff 50%, #ffffff 100%)
 class: text-center font-sans
 ---
 
-# <span class="text-primary-700 font-bold">Act 2:</span> The Evolution
+# <span class="text-primary-700 font-bold">Part 1:</span> Context Features
 
-## <span class="text-gray-600 font-medium">From Tools to Teammates</span>
+## <span class="text-gray-600 font-medium">CLAUDE.md, Planning, MCP & AI Agents</span>
 
 ---
-layout: two-cols
+layout: default
 ---
 
-# The Home Renovation Analogy
+## CLAUDE.md: Your Project's DNA
+### The Foundation of Context Engineering
 
-<v-clicks>
+<ClaudeMdEditor />
 
-- 🔨 **Traditional Coding** - DIY with basic hand tools
-- ⚡ **IDE** - Power tools from Home Depot  
-- 🧑 **Copilot** - Asking your neighbor to help
-- 🏠 **Claude Code** - Full renovation crew with project manager
 
-</v-clicks>
+---
+layout: default
+---
 
-::right::
+# The Power of Context
+## Before vs After CLAUDE.md
 
-<div class="mt-8">
-  <img src="https://images.unsplash.com/photo-1581858726788-75bc0f6a952d?w=800" class="rounded-lg shadow-2xl" />
+<div class="grid grid-cols-2 gap-6 mt-4">
+  <div v-click class="p-4 bg-red-50 border-l-4 border-red-400 rounded-lg">
+    <h3 class="font-bold mb-4 text-red-800">❌ Without Context</h3>
+    <div class="space-y-3 text-sm">
+      <div>
+        <div class="font-mono text-xs text-gray-600 mb-1">$ claude "add user login"</div>
+        <div class="text-gray-700">Generic Flask login, no FastAPI integration</div>
+      </div>
+      <div>
+        <div class="font-mono text-xs text-gray-600 mb-1">$ claude "write tests"</div>
+        <div class="text-gray-700">Uses unittest instead of your pytest setup</div>
+      </div>
+      <div>
+        <div class="font-mono text-xs text-gray-600 mb-1">$ claude "fix bug"</div>
+        <div class="text-gray-700">Generic solution breaks your standards</div>
+      </div>
+    </div>
+  </div>
+  
+  <div v-click class="p-4 bg-green-50 border-l-4 border-green-400 rounded-lg">
+    <h3 class="font-bold mb-4 text-green-800">✅ With CLAUDE.md</h3>
+    <div class="space-y-3 text-sm">
+      <div>
+        <div class="font-mono text-xs text-gray-600 mb-1">$ claude "add user login"</div>
+        <div class="text-gray-700">FastAPI OAuth + Pydantic models + error handling</div>
+      </div>
+      <div>
+        <div class="font-mono text-xs text-gray-600 mb-1">$ claude "write tests"</div>
+        <div class="text-gray-700">Pytest + fixtures + 90% coverage</div>
+      </div>
+      <div>
+        <div class="font-mono text-xs text-gray-600 mb-1">$ claude "fix bug"</div>
+        <div class="text-gray-700">Follows patterns + docs + regression test</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div v-click class="mt-6 p-4 bg-purple-50 rounded border-l-4 border-purple-400 text-center">
+  <p class="text-purple-800 font-semibold">
+    🎯 Context = Consistency: Every interaction builds on your established patterns
+  </p>
 </div>
 
 ---
@@ -194,65 +219,6 @@ layout: default
 ### How Claude Code Thinks Strategically
 
 <PlanningModeDemo />
----
-layout: default
----
-
-# The Power of Context
-## Before vs After CLAUDE.md
-
-<div class="grid grid-cols-2 gap-6 mt-4">
-  <div v-click class="p-4 bg-red-50 border-l-4 border-red-400 rounded-lg">
-    <h3 class="font-bold mb-4 text-red-800">❌ Without Context</h3>
-    <div class="space-y-3 text-sm">
-      <div>
-        <div class="font-mono text-xs text-gray-600 mb-1">$ claude "add user login"</div>
-        <div class="text-gray-700">Generic Flask login, no FastAPI integration</div>
-      </div>
-      <div>
-        <div class="font-mono text-xs text-gray-600 mb-1">$ claude "write tests"</div>
-        <div class="text-gray-700">Uses unittest instead of your pytest setup</div>
-      </div>
-      <div>
-        <div class="font-mono text-xs text-gray-600 mb-1">$ claude "fix bug"</div>
-        <div class="text-gray-700">Generic solution breaks your standards</div>
-      </div>
-    </div>
-  </div>
-  
-  <div v-click class="p-4 bg-green-50 border-l-4 border-green-400 rounded-lg">
-    <h3 class="font-bold mb-4 text-green-800">✅ With CLAUDE.md</h3>
-    <div class="space-y-3 text-sm">
-      <div>
-        <div class="font-mono text-xs text-gray-600 mb-1">$ claude "add user login"</div>
-        <div class="text-gray-700">FastAPI OAuth + Pydantic models + error handling</div>
-      </div>
-      <div>
-        <div class="font-mono text-xs text-gray-600 mb-1">$ claude "write tests"</div>
-        <div class="text-gray-700">Pytest + fixtures + 90% coverage</div>
-      </div>
-      <div>
-        <div class="font-mono text-xs text-gray-600 mb-1">$ claude "fix bug"</div>
-        <div class="text-gray-700">Follows patterns + docs + regression test</div>
-      </div>
-    </div>
-  </div>
-</div>
-
-<div v-click class="mt-6 p-4 bg-purple-50 rounded border-l-4 border-purple-400 text-center">
-  <p class="text-purple-800 font-semibold">
-    🎯 Context = Consistency: Every interaction builds on your established patterns
-  </p>
-</div>
-
----
-layout: default
----
-
-## CLAUDE.md: Your Project's DNA
-### The Foundation of Context Engineering
-
-<ClaudeMdEditor />
 
 ---
 layout: default
@@ -417,6 +383,18 @@ layout: center
 </v-clicks>
 
 ---
+layout: section
+transition: slide-left
+background: linear-gradient(135deg, #eff6ff 0%, #dbeafe 50%, #f8fafc 100%)
+class: text-center font-sans
+---
+
+# <span class="text-primary-700 font-bold">Part 2:</span> Helpful Tools
+
+## <span class="text-gray-600 font-medium">Hooks, Slash Commands, CLI Tools</span>
+
+
+---
 layout: default
 ---
 
@@ -468,107 +446,49 @@ layout: default
 </div>
 
 ---
-layout: section
-transition: slide-left
-background: linear-gradient(135deg, #eff6ff 0%, #dbeafe 50%, #f8fafc 100%)
-class: text-center font-sans
----
-
-# <span class="text-primary-700 font-bold">Act 3:</span> The Transformation
-
-## <span class="text-gray-600 font-medium">The Multiplier Effect</span>
-
----
-layout: center
----
-
-# Before vs After
-
-<div class="grid grid-cols-2 gap-4 mt-6">
-  <div class="p-6 card-clean">
-    <h3 class="text-lg font-bold mb-4 text-gray-700">Traditional Development</h3>
-    <ul class="space-y-3 text-gray-600">
-      <li class="flex items-center gap-3">
-        <div class="w-2 h-2 bg-red-400 rounded-full"></div>
-        Feature implementation: 4-6 hours
-      </li>
-      <li class="flex items-center gap-3">
-        <div class="w-2 h-2 bg-red-400 rounded-full"></div>
-        Bug discovery: In production
-      </li>
-      <li class="flex items-center gap-3">
-        <div class="w-2 h-2 bg-red-400 rounded-full"></div>
-        Refactoring: 2-3 days
-      </li>
-      <li class="flex items-center gap-3">
-        <div class="w-2 h-2 bg-red-400 rounded-full"></div>
-        Documentation: Often skipped
-      </li>
-      <li class="flex items-center gap-3">
-        <div class="w-2 h-2 bg-red-400 rounded-full"></div>
-        Test coverage: 40-60%
-      </li>
-    </ul>
-  </div>
-  
-  <div class="p-6 card-clean border-2 border-primary-200">
-    <h3 class="text-lg font-bold mb-4 text-primary-700">With Claude Code</h3>
-    <ul class="space-y-3 text-gray-600">
-      <li class="flex items-center gap-3">
-        <div class="w-2 h-2 bg-primary-500 rounded-full"></div>
-        Feature implementation: 30-45 min
-      </li>
-      <li class="flex items-center gap-3">
-        <div class="w-2 h-2 bg-primary-500 rounded-full"></div>
-        Bug discovery: Before commit
-      </li>
-      <li class="flex items-center gap-3">
-        <div class="w-2 h-2 bg-primary-500 rounded-full"></div>
-        Refactoring: 30 minutes
-      </li>
-      <li class="flex items-center gap-3">
-        <div class="w-2 h-2 bg-primary-500 rounded-full"></div>
-        Documentation: Auto-generated
-      </li>
-      <li class="flex items-center gap-3">
-        <div class="w-2 h-2 bg-primary-500 rounded-full"></div>
-        Test coverage: 90%+
-      </li>
-    </ul>
-  </div>
-</div>
-
-
----
 layout: default
 ---
 
-# Specialized Agent Orchestration
-## How Agents Handle Complex Tasks
+# Terminal Native Integration
+## Claude Code + Your Favorite CLI Tools
+
+<div class="grid grid-cols-2 gap-8 mt-6">
+
+<div class="space-y-4">
+
+**The Terminal Advantage:**
+- **Direct tool access** - Runs git, docker, npm natively
+- **Tool output parsing** - Understands error messages
+- **Workflow continuity** - No context switching
+- **Custom CLI commands** - Create your own CLI commands for Claude to re-use
+
+**Common tools it excels with:**
+- Git • Docker • Kubernetes • npm/yarn • pytest • curl • jq
+</div>
+
+<div class="space-y-4">
+
+**Real Workflow Example:**
+```bash
+$ claude "create feature branch and add proper logging with tests"
+
+✓ Running 'git checkout -b feature/add-logging'
+✓ Running 'pytest -v' 
+✓ All 47 tests passing
+✓ Adding structured logging to main.py
+✓ Installing python-json-logger via pip
+✓ Updating requirements.txt
+✓ Creating logging configuration in config/logging.yaml
+✓ Running 'pytest -v' (verifying changes)
+✓ All tests still passing + 3 new logging tests
+✓ Running 'git add . && git commit -m "feat: add structured logging and monitoring"'
+
+Feature branch created with comprehensive logging setup.
+```
 
 
-**🎯 Task: Build User Dashboard**
-- React component architecture
-- REST API endpoints
-- User authentication
-- Data visualization charts
-- Comprehensive test coverage
+</div>
 
-
-**⚛️ Frontend Agent**  
-Creates React components, implements responsive design, handles state management
-
-**🖥️ Backend Agent**  
-Builds API endpoints, sets up database models, handles authentication logic
-
-**🧪 Testing Agent**  
-Writes unit tests, integration tests, sets up test automation pipeline
-
-
-<div class="mt-6 p-4 bg-purple-50 rounded border-l-4 border-purple-400 text-center">
-  <p class="text-purple-800 font-semibold">
-    ✨ Three specialists working in parallel, each focused on their domain expertise
-  </p>
 </div>
 
 ---
@@ -577,9 +497,9 @@ background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 50%, #f1f5f9 100%)
 class: text-center font-sans
 ---
 
-# <span class="text-primary-700 font-bold">Act 4:</span> The Future
+# <span class="text-primary-700 font-bold">Part 3:</span> What's Next
 
-## <span class="text-gray-600 font-medium">Your New Development Paradigm</span>
+## <span class="text-gray-600 font-medium">Your Path to Agentic Development</span>
 
 ---
 layout: default
@@ -590,6 +510,14 @@ layout: default
 
 <WorkflowDemo />
 
+---
+layout: default
+---
+
+# From Session to Agent
+## Natural Language Agent Creation
+
+<AgentCreationDemo />
 
 ---
 layout: center
@@ -621,27 +549,6 @@ layout: center
     <h3 class="font-bold mb-2">Perfect</h3>
     <p class="text-sm text-gray-600">Refine and optimize results</p>
   </div>
-</div>
-
----
-
-# Team Transformation
-
-<div v-click class="mt-8 mb-6">
-  <h3 class="text-xl font-bold mb-4">When Everyone Has This Power:</h3>
-  <ul class="space-y-2 text-lg">
-    <li>🚀 Junior devs produce senior-level code</li>
-    <li>💡 Senior devs focus on architecture and innovation</li>
-    <li>🔍 Agents analyze codebases and explain intent for faster onboarding</li>
-    <li>🎯 Teams tackle previously impossible projects</li>
-  </ul>
-</div>
-
-<div v-click class="p-6 bg-gradient-to-r from-purple-900/30 to-blue-900/30 rounded-lg backdrop-blur-sm border border-purple-500/20">
-  <p class="text-center">
-    <span class="text-xl font-bold">"The 10x developer myth becomes reality"</span><br>
-    <span class="text-base mt-2 block">Not through working harder, but working with AI teammates</span>
-  </p>
 </div>
 
 ---

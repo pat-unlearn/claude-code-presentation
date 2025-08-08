@@ -97,7 +97,7 @@ const claudeMdContent = [
   '',
   '## Development Workflow',
   '- Feature branches from main',
-  '- PR requires 2 code reviews',
+  '- Utilize orchestration agents',
   '- All tests must pass before merge',
   '- Deploy to staging before production'
 ]

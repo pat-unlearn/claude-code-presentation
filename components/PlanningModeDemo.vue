@@ -15,7 +15,7 @@
                  :key="index"
                  :class="['mb-3', step.type === 'thinking' ? 'text-yellow-400' : step.type === 'analysis' ? 'text-blue-400' : 'text-green-400']">
               <div class="font-semibold">{{ step.title }}</div>
-              <div class="ml-4 text-gray-400 text-xs leading-relaxed">{{ step.content }}</div>
+              <div class="ml-4 text-gray-400 text-xs leading-relaxed whitespace-pre-line">{{ step.content }}</div>
             </div>
             <div v-if="isPlanning && visibleSteps.length < planningSteps.length"
                  class="flex items-center text-yellow-400">
