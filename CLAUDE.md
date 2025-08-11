@@ -1,140 +1,204 @@
 # Claude Code Presentation Project
 
 ## Project Overview
-Interactive Slidev presentation showcasing Claude Code's capabilities including planning mode, CLAUDE.md context persistence, specialized agents, hooks, and slash commands. The presentation uses a compelling "From Code Monkeys to Code Orchestrators" narrative with construction site analogies.
+Interactive Slidev presentation demonstrating Claude Code's agentic development capabilities. The presentation showcases how Claude Code evolves AI-assisted development from basic "prompt engineering" to sophisticated "agentic workflows" with persistent context, strategic planning, specialized agents, and automated tooling integration.
 
-## Architecture
-- **Presentation Framework**: Slidev with Vue.js components
-- **Styling**: TailwindCSS with custom animations
-- **Interactive Components**: Vue.js with composition API for demonstrations
-- **Theme**: Seriph with custom dark mode styling
-- **Build System**: Vite with Vue plugin
+**Target Audience**: Software engineers, technical leads, and development teams interested in AI-powered development workflows.
 
-## Technology Stack
-- **Core**: Slidev 52.1.0
-- **UI Library**: Vue.js 3+ with Composition API
-- **Styling**: TailwindCSS (via Slidev theme)
-- **Build Tool**: Vite with Vue plugin
-- **Package Manager**: npm
-- **Development Tools**: playwright-mcp for visual debugging
+**Core Message**: Claude Code transforms developers from individual coders into orchestrators of AI development teams.
 
-## Presentation Structure
+## Architecture & Technology Stack
 
-### Act 1: The Problem (Slides 1-5)
-- Opening: "The Lonely Developer" problem statement
-- Statistics on development time waste
-- Traditional development workflow demonstration
+### Core Framework
+- **Presentation Engine**: Slidev 0.52.1 with Vue.js 3+ Composition API
+- **Styling System**: TailwindCSS with custom dark theme and animations
+- **Build System**: Vite with Vue plugin for fast hot-reload development
+- **Package Manager**: npm with dependency management
 
-### Act 2: The Evolution (Slides 6-25)
-**Core Features Demonstrated:**
+### Interactive Components
+- **Vue.js Components**: Self-contained, reactive demonstrations
+- **Animation System**: CSS transitions with Vue state management
+- **Visual Debugging**: playwright-mcp for automated testing and screenshots
+- **Responsive Design**: Mobile-first approach with desktop optimizations
 
-#### Planning Mode (Slides 7-9)
-- Interactive PlanningModeVisualizer component
-- Before/after comparison
-- Live demo of planning workflow
-- Shows thoughtful approach vs diving in blindly
+### Development Tools
+- **Visual Testing**: playwright-mcp (MANDATORY for UI changes)
+- **Local Development**: `npm run dev` with hot-reload
+- **Production Build**: `npm run build` for static site generation
+- **Export Options**: PDF generation and static hosting compatibility
 
-#### CLAUDE.md Context Persistence (Slides 10-12)
-- Project manual concept
-- Session continuity demonstration
-- Business rules and standards enforcement
+## Presentation Structure (28 Slides Total)
 
-#### Specialized Agents (Slides 13-16)
-- AgentOrchestrator interactive component
-- Security, Performance, and Architecture agents
-- Parallel execution demonstration
-- Real-time agent communication simulation
+### Opening: The Evolution of AI Development (Slides 1-2)
+- **Title Slide**: Agentic Development with Claude Code
+- **The AI Development Evolution**: Three-column comparison showing progression from "Vibe Coding" → "Prompt Engineering" → "Agentic Development"
 
-#### Hooks (Slides 17-19)
-- HookFlow component showing automation pipeline
-- Pre-commit, pre-edit, and post-task hooks
-- Error prevention demonstration
-- Quality gates visualization
+### Part 1: Context Engineering (Slides 3-12)
+**Core Theme**: Building persistent, project-aware AI workflows
 
-#### Slash Commands (Slides 20-22)
-- CommandPalette interactive component
-- Built-in vs custom commands
-- Live execution simulation
-- Power user workflow examples
+#### CLAUDE.md: Project DNA (Slides 3-5)
+- **ClaudeMdEditor Component**: Live typing animation showing project context file
+- **Before/After Comparison**: Generic AI responses vs context-aware solutions
+- **Key Message**: Context = Consistency across all interactions
 
-### Act 3: The Transformation (Slides 23-27)
-- ROI calculator and productivity metrics
-- Before/after development workflow comparison
-- Live case study demonstration
+#### Planning Mode: Strategic Development (Slides 6-7)
+- **PlanningModeDemo Component**: Interactive step-by-step planning visualization
+- **Comparison**: Traditional prompting vs strategic planning approach
+- **Statistics**: 60-90% reduction in development time, 4-6x fewer bugs
 
-### Act 4: The Future (Slides 28-32)
-- "Code Conductors" vision
-- Team transformation implications
-- Getting started guide
+#### MCP: Extensibility System (Slides 8-9)
+- **Smartphone Analogy**: Claude as phone, MCP servers as apps
+- **McpServersDemo Component**: Live server integration examples
+- **Real Examples**: playwright-mcp, serena-mcp, xcodebuild-mcp
 
-## Interactive Components
+#### Context Window Management (Slides 10-12)
+- **DetectiveCorkboard Component**: Interactive analogy showing LLM memory limitations
+- **36 Evidence Cards**: Demonstrates "full board" with realistic memory pressure
+- **Summarization Process**: 80% reduction showing automatic context management
+
+### Part 2: Helpful Tools & Automation (Slides 13-18)
+**Core Theme**: Workflow automation and power-user features
+
+#### Specialized Agents (Slides 13-15)
+- **AgentDashboard Component**: Parallel agent execution simulation
+- **Architecture**: Frontend, Backend, Testing specialists
+- **Key Benefit**: Domain expertise with isolated context windows
+
+#### Hooks & Automation (Slides 16-17)
+- **HookFlow Component**: Visual workflow automation pipeline  
+- **Hook Types**: UserPromptSubmit, PreToolUse, PostToolUse, Stop
+- **Use Cases**: Quality gates, team policy enforcement, notifications
+
+#### Slash Commands & CLI Integration (Slides 18)
+- **CommandPalette Component**: Built-in vs custom commands
+- **Terminal Integration**: Native tool access and output parsing
+- **Examples**: /test, /plan, /review, /commit, custom workflows
+
+### Part 3: Workflow & Vision (Slides 19-28)
+**Core Theme**: Real-world application and future possibilities
+
+#### Live Workflow Examples (Slides 19-21)
+- **WorkflowDemo Component**: Prompt → PRD → Plan → Execute workflow
+- **AgentCreationDemo Component**: Session-to-agent transformation
+- **Real Case Study**: How this presentation was built
+
+#### Developer Transformation (Slides 22-24)
+- **Vision**: Developers as "Code Conductors"
+- **Getting Started Guide**: 4-step implementation process
+- **Tips & Tricks**: Power-user features and optimization strategies
+
+#### Resources & Conclusion (Slides 25-28)
+- **Sources & References**: Research supporting productivity claims
+- **Community Links**: Documentation, Discord, GitHub
+- **Thank You**: Call-to-action for adoption
+
+## Interactive Components Library
 
 ### Vue Components (`/components/`)
-All components use Vue 3 Composition API and follow consistent styling patterns:
+All components use Vue 3 Composition API with consistent styling patterns and state management:
 
-1. **PlanningModeDemo.vue**
-   - Shows step-by-step planning process
-   - Interactive animation with start button
-   - Visual progress indicators
+#### Core Demonstration Components
 
-2. **AgentDashboard.vue**
-   - Simulates multiple agents working in parallel
-   - Real-time terminal-style output
-   - Agent status visualization with animations
+1. **ClaudeMdEditor.vue**
+   - **Purpose**: Shows CLAUDE.md typing with character-by-character animation
+   - **Features**: Auto-start animation, realistic typing speed, HTML line breaks
+   - **State**: `isTyping`, `typedText`, `hasStarted` refs
+   - **Styling**: Terminal-style dark background, green text, blinking cursor
 
-3. **HookFlow.vue**
-   - Multiple hook execution scenarios
-   - Visual flow diagram with progress tracking
-   - Terminal log output simulation
+2. **DetectiveCorkboard.vue** ⭐ *New Interactive Analogy*
+   - **Purpose**: Demonstrates LLM context window limitations through detective corkboard
+   - **Features**: 36 evidence cards, 5-phase interactive demo, 80% summarization
+   - **Phases**: Ready → Filling → Full → Summarizing → Continuing → Complete  
+   - **Visual**: Corkboard background, pinned yellow cards, "BOARD FULL!" indicator
+   - **Animation**: Staggered card placement, removal transitions, summary cards
 
-4. **CommandPalette.vue**
-   - Interactive command execution
-   - Built-in vs custom command categorization
-   - Real-time output simulation
+3. **PlanningModeDemo.vue**
+   - **Purpose**: Step-by-step strategic planning visualization
+   - **Features**: Progressive phase revelation, visual progress indicators
+   - **Phases**: Requirements → Analysis → Architecture → Planning
+   - **Styling**: Clean cards with colored left borders, smooth transitions
 
-5. **McpServersDemo.vue**
-   - Interactive MCP server demonstration
-   - Real-time server status and capabilities
-   - Terminal integration examples
+4. **AgentDashboard.vue**
+   - **Purpose**: Parallel specialist agent execution simulation
+   - **Features**: Frontend/Backend/Testing agents, terminal output, progress tracking
+   - **Animation**: Real-time typing simulation, agent status indicators
+   - **Layout**: Split dashboard with agent cards and terminal output
 
-6. **WorkflowDemo.vue**
-   - Complete workflow from prompt to implementation
-   - Shows thinking process and planning phases
-   - Demonstrates real Claude Code usage patterns
+5. **HookFlow.vue**
+   - **Purpose**: Workflow automation pipeline visualization
+   - **Features**: Multi-scenario demonstrations, visual flow diagrams
+   - **Hook Types**: UserPromptSubmit, PreToolUse, PostToolUse, Stop hooks
+   - **Interactive**: Button-triggered scenarios, terminal log simulation
 
-## Styling Guidelines
-- **Color Scheme**: Dark theme with neon accents
-- **Primary Colors**: Blue (#3B82F6), Purple (#8B5CF6), Green (#10B981)
-- **Background**: Dark grays (#1F2937, #111827)
-- **Text**: White primary, gray-300 secondary
-- **Animations**: Smooth transitions with hover effects
-- **Layout**: Clean, developer-focused aesthetic
+6. **CommandPalette.vue**
+   - **Purpose**: Slash command system demonstration
+   - **Features**: Built-in vs custom commands, execution simulation
+   - **Commands**: /test, /plan, /review, /commit + custom examples
+   - **Layout**: Command palette UI with categorized command lists
 
-## Content Standards
-- Use construction site analogies consistently
-- Emphasize transformation from "coding" to "orchestrating"
-- Include specific metrics and timeframes
-- Show real code examples in demos
-- Maintain professional but engaging tone
+7. **McpServersDemo.vue**
+   - **Purpose**: MCP server integration examples
+   - **Features**: Server status cards, capability demonstrations
+   - **Examples**: playwright-mcp, serena-mcp, xcodebuild-mcp
+   - **Layout**: Server cards below terminal with side-by-side arrangement
 
-## Demo Examples (`/demos/`)
-- **planning-example.md**: Detailed planning mode walkthrough
-- **claude-md-example.md**: Comprehensive CLAUDE.md template
-- **agent-examples.md**: Before/after code with agent improvements
+8. **WorkflowDemo.vue**
+   - **Purpose**: Complete development workflow from prompt to execution
+   - **Features**: Thinking animations, PRD generation, planning phases
+   - **Process**: Shows real Claude Code usage patterns and decision-making
 
-## Presentation Flow
-1. **Hook the audience** with the "Code Monkeys" problem
-2. **Build tension** with traditional development pain points
-3. **Introduce solution** through construction site analogy
-4. **Demonstrate each feature** with interactive components
-5. **Show transformation** with before/after comparisons
-6. **Inspire action** with future vision and getting started guide
+9. **AgentCreationDemo.vue**
+   - **Purpose**: Natural language agent creation from sessions
+   - **Features**: Live typing animation, session-to-agent transformation
+   - **Interactive**: Demonstrates workflow memorization and agent generation
 
-## Key Messages
-- "Stop coding. Start orchestrating."
-- "Your code, amplified."
-- "From keyboard warrior to code conductor."
-- "The 10x developer myth becomes reality through AI teammates"
+## Design System & Styling Guidelines
+
+### Color Palette
+- **Primary Theme**: Dark gradient backgrounds with professional accents
+- **Core Colors**: 
+  - Blue (#3B82F6) - Primary actions, links, Claude Code branding
+  - Purple (#8B5CF6) - Secondary accents, advanced features  
+  - Green (#10B981) - Success states, positive outcomes
+  - Orange (#F59E0B) - Warnings, intermediate states
+  - Red (#EF4444) - Errors, problems, "before" states
+- **Background Gradients**: Dark purple-to-black theme (`#1A081C` to `#3d2a4f`)
+- **Text Hierarchy**: White primary, gray-300 secondary, colored accents for emphasis
+
+### Component Styling Patterns
+- **Card Design**: Rounded corners, colored left borders for categorization
+- **Interactive Elements**: Hover effects, smooth transitions, visual feedback
+- **Terminal Styling**: Dark backgrounds, green/white text, monospace fonts
+- **Animation Timing**: CSS transitions with 200-500ms durations
+- **Layout**: Clean, developer-focused aesthetic with generous whitespace
+
+### Responsive Design
+- **Mobile-first**: Components adapt to smaller screens
+- **Grid Layouts**: 2-3 column layouts that stack on mobile  
+- **Typography**: Scalable text sizes, appropriate line heights
+- **Touch Targets**: Buttons sized for touch interaction
+
+## Content & Messaging Strategy
+
+### Core Narrative Arc
+1. **Problem Recognition**: Current AI development limitations
+2. **Solution Introduction**: Agentic development approach  
+3. **Feature Demonstration**: Interactive component showcases
+4. **Transformation Vision**: "Code Conductors" future state
+5. **Implementation Path**: Practical getting-started guidance
+
+### Key Value Propositions
+- **Context Persistence**: "Every interaction builds on established patterns"
+- **Strategic Planning**: "Think before you code" - 60-90% time reduction
+- **Agent Specialization**: "Domain experts working in parallel"
+- **Workflow Automation**: "Quality gates and team policy enforcement"
+- **Professional Development**: "From individual coder to AI team orchestrator"
+
+### Tone & Voice
+- **Professional yet Approachable**: Technical depth with clear explanations
+- **Transformation-focused**: Emphasize evolution, not replacement
+- **Evidence-based**: Include statistics and research citations
+- **Action-oriented**: Clear next steps and implementation guidance
 
 ## Technical Implementation Notes
 - All interactive components are self-contained Vue 3 components

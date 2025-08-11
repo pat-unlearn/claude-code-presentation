@@ -55,39 +55,56 @@ transition: slide-left
 layout: default
 ---
 
-# The AI Development Reality
-## Why Context-Aware AI Changes Everything
+## The AI Development Evolution
+### How Claude Code passes the vibe check
 
-<div class="grid grid-cols-2 gap-8 mt-6">
-<div>
-<div v-click class="space-y-6">
+<div class="grid grid-cols-3 gap-6 mt-6">
 
-**The AI Problem:**
-- AI forgets your project context between sessions
-- Breaking changes across files
-- Generic responses don't fit your codebase
-- Reinventing the wheel
-- Endless debug loop
+<div v-click class="p-4 bg-red-50 border-l-4 border-red-400 rounded-lg">
+  <h3 class="font-bold mb-3 text-red-800">❌ Vibe Coding</h3>
+  <div class="space-y-2 text-sm">
+    <div class="text-gray-700">• "Just make it work"</div>
+    <div class="text-gray-700">• No planning or structure</div>
+    <div class="text-gray-700">• Quick fixes pile up</div>
+    <div class="text-gray-700">• Technical debt everywhere</div>
+  </div>
+  <div class="mt-3 text-xs text-red-600 font-semibold">
+    🎯 Result: Chaos & rework
+  </div>
+</div>
+
+<div v-click class="p-4 bg-orange-50 border-l-4 border-orange-400 rounded-lg">
+  <h3 class="font-bold mb-3 text-orange-800">⚠️ Prompt Engineering</h3>
+  <div class="space-y-2 text-sm">
+    <div class="text-gray-700">• One-shot prompts</div>
+    <div class="text-gray-700">• No project context</div>
+    <div class="text-gray-700">• Generic solutions</div>
+    <div class="text-gray-700">• Manual integration</div>
+  </div>
+  <div class="mt-3 text-xs text-orange-600 font-semibold">
+    🎯 Result: Inconsistent compatibility
+  </div>
+</div>
+
+<div v-click class="p-4 bg-green-50 border-l-4 border-green-400 rounded-lg">
+  <h3 class="font-bold mb-3 text-green-800">✅ Agentic Development</h3>
+  <div class="space-y-2 text-sm">
+    <div class="text-gray-700">• Persistent project context</div>
+    <div class="text-gray-700">• Strategic planning mode</div>
+    <div class="text-gray-700">• Specialized AI agents</div>
+    <div class="text-gray-700">• Automated workflows</div>
+  </div>
+  <div class="mt-3 text-xs text-green-600 font-semibold">
+    🎯 Result: High quality code
+  </div>
+</div>
 
 </div>
-<div v-click class="p-4 bg-red-50 rounded-lg border-l-4 border-red-400">
-  <p class="text-red-800 font-semibold">
-    💡 AI without context is just expensive autocomplete
+
+<div v-click class="mt-6 p-4 bg-blue-50 rounded border-l-4 border-blue-400 text-center">
+  <p class="text-blue-800 font-semibold">
+    🚀 <strong>Claude Code:</strong> AI development assistant that researches, thinks, and plans prior to execution
   </p>
-</div>
-</div>
-
-
-<div v-click class="space-y-6">
-
-**What makes Claude Code agents different:**
-- Project awareness & team standards
-- Business context & domain knowledge  
-- Persistent memory across sessions
-- Extensibility & tooling
-
-</div>
-
 </div>
 
 ---
@@ -100,6 +117,10 @@ class: text-center font-sans
 # <span class="text-primary-700 font-bold">Part 1:</span> Context
 
 ## <span class="text-gray-600 font-medium">CLAUDE.md, Planning, MCP & Specialized Agents</span>
+
+<!--
+arstarst
+-->
 
 ---
 layout: default
@@ -115,8 +136,8 @@ layout: default
 layout: default
 ---
 
-# The Power of Context
-## Before vs After CLAUDE.md
+## The Power of Context
+### Before vs After CLAUDE.md
 
 <div class="grid grid-cols-2 gap-6 mt-4">
   <div v-click class="p-4 bg-red-50 border-l-4 border-red-400 rounded-lg">
@@ -166,8 +187,8 @@ layout: default
 layout: default
 ---
 
-# The Planning Advantage
-## Strategic Development with Claude Code
+## The Planning Advantage
+### Strategic Development with Claude Code
 <div class="grid grid-cols-2 gap-8 mt-4">
 <v-clicks>
   <div class="p-4 bg-red-50 border-l-4 border-red-400 rounded-lg">
@@ -222,8 +243,8 @@ layout: default
 layout: default
 ---
 
-# What is MCP?
-## Model Context Protocol: Claude's Power-Up System
+## What is MCP?
+### Model Context Protocol: Claude's Power-Up System
 
 <v-clicks>
 
@@ -249,8 +270,8 @@ layout: default
     <h3 class="font-bold mb-3 text-green-800">🤖 Claude + MCP</h3>
     <ul class="space-y-2 text-sm text-green-700">
       <li>playwright-mcp for browser automation</li>
-      <li>database-mcp for SQL queries</li>
-      <li>slack-mcp for team communication</li>
+      <li>serena-mcp for project indexing</li>
+      <li>xcodebuild-mcp to connect Claude to phone simulator</li>
       <li>Each server adds domain expertise</li>
     </ul>
   </div>
@@ -277,8 +298,8 @@ layout: default
 layout: default
 ---
 
-# The Context Window Challenge
-## Understanding LLM Memory Limitations
+## The Context Window Challenge
+### Understanding LLM Memory Limitations
 
 <v-clicks>
 
@@ -286,7 +307,6 @@ layout: default
 - Context window = fixed-size buffer in memory
 - Contains: past messages + model responses + system instructions
 - Hard limit: cannot "see" anything beyond the cutoff point
-- **Not like human memory** - no external recall or storage
 
 **When the Buffer Fills Up...**
 - New information pushes out old information
@@ -306,8 +326,8 @@ layout: default
 layout: default
 ---
 
-## The Detective's Corkboard Analogy
-### How LLMs Manage Memory Constraints
+## The Context Window Challenge
+### The Detective's Corkboard Analogy
 
 <DetectiveCorkboard />
 
@@ -336,7 +356,7 @@ layout: default
 
 <div v-click class="mt-4 p-3 bg-purple-50 rounded-lg border-l-4 border-purple-400">
   <p class="text-center text-sm text-purple-800 font-semibold">
-    🎭 <strong>Think of it as:</strong> Having a senior security expert, documentation specialist, and QA engineer all working on your code simultaneously
+    🎭 <strong>Think of it as:</strong> Having a senior security expert, documentation specialist, and QA engineer all working on your code
   </p>
 </div>
 
@@ -378,8 +398,8 @@ layout: default
 layout: default
 ---
 
-# Live Subagent Demo
-## Watch Specialized Agents in Action
+## Live Subagent Demo
+### Watch Specialized Agents in Action
 
 <AgentDashboard />
 
