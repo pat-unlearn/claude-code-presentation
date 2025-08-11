@@ -1,6 +1,9 @@
-# Claude Code Presentation: "From Code Monkeys to Code Orchestrators"
+# Claude Code Presentation: "Agentic Development with Claude Code"
 
-A compelling interactive presentation showcasing the transformative power of Claude Code through planning mode, specialized agents, hooks, slash commands, and CLAUDE.md context persistence.
+A compelling interactive Slidev presentation showcasing the transformative power of Claude Code through planning mode, specialized agents, hooks, slash commands, and CLAUDE.md context persistence.
+
+## 🌐 Live Demo
+**https://pat-unlearn.github.io/claude-code-presentation/**
 
 ## 🚀 Quick Start
 
@@ -31,43 +34,59 @@ This presentation tells the story of how Claude Code transforms developers from 
 
 ## 🏗️ Architecture
 
-- **Framework**: Slidev with React components
-- **Styling**: TailwindCSS with custom animations
-- **Interactive Demos**: React components with real-time simulations
-- **Theme**: Dark mode with construction site aesthetic
+- **Framework**: Slidev with Vue.js 3 components
+- **Styling**: TailwindCSS with custom animations and gradients
+- **Interactive Demos**: Vue 3 Composition API components with real-time simulations
+- **Theme**: Seriph with custom dark mode styling
+- **Build System**: Vite with Vue plugin
 
 ## 🎭 Interactive Components
 
-### Planning Mode Visualizer
-Shows step-by-step planning process with animated progress indicators.
+### ClaudeMdEditor
+Live-typing animation demonstrating CLAUDE.md project context setup with benefits sidebar.
 
-### Agent Orchestrator
-Simulates multiple specialized agents working in parallel on code improvements.
+### PlanningModeDemo  
+Shows step-by-step strategic planning process with thinking animations and progress indicators.
 
-### Hook Flow
-Demonstrates automated quality gates and error prevention.
+### DetectiveCorkboard
+Interactive detective corkboard analogy demonstrating LLM context window limitations and summarization.
 
-### Command Palette
-Interactive slash command execution with real-time output.
+### AgentDashboard
+Simulates multiple specialized agents (Frontend, Backend, Testing) working in parallel with real-time terminal output.
+
+### HookFlow
+Demonstrates automated quality gates and error prevention through different hook execution scenarios.
+
+### CommandPalette
+Interactive slash command execution with built-in vs custom command categorization.
+
+### McpServersDemo
+Interactive MCP server demonstration showing real-time server capabilities and terminal integration.
+
+### WorkflowDemo
+Complete workflow demonstration from prompt to implementation showing Claude Code's thinking process.
 
 ## 📁 Project Structure
 
 ```
 claude-code-presentation/
-├── slides.md              # Main presentation content
-├── components/             # React interactive components
-│   ├── PlanningModeVisualizer.jsx
-│   ├── AgentOrchestrator.jsx
-│   ├── HookFlow.jsx
-│   └── CommandPalette.jsx
-├── demos/                  # Example scenarios and code
-│   ├── planning-example.md
-│   ├── claude-md-example.md
-│   └── agent-examples.md
+├── slides.md              # Main presentation content (28 slides)
+├── components/             # Vue.js interactive components
+│   ├── ClaudeMdEditor.vue
+│   ├── PlanningModeDemo.vue
+│   ├── DetectiveCorkboard.vue
+│   ├── AgentDashboard.vue
+│   ├── HookFlow.vue
+│   ├── CommandPalette.vue
+│   ├── McpServersDemo.vue
+│   └── WorkflowDemo.vue
+├── .github/workflows/      # GitHub Actions CI/CD
+│   └── deploy.yml
 ├── public/                 # Static assets
 ├── style.css              # Custom styling
-├── CLAUDE.md              # Project context
-└── package.json           # Dependencies
+├── vite.config.ts         # Vite configuration (includes GitHub Pages base URL)
+├── CLAUDE.md              # Project context and documentation
+└── package.json           # Dependencies and scripts
 ```
 
 ## 🎨 Design System
@@ -99,7 +118,10 @@ claude-code-presentation/
 - Team knowledge in AI form
 
 ### 3. Specialized Agents
-- Security agent: OWASP compliance, vulnerability scanning
+- Frontend agent: React/Vue components, UI/UX, responsive design
+- Backend agent: APIs, databases, business logic
+- Testing agent: Unit tests, integration tests, coverage
+- Security agent: OWASP compliance, vulnerability scanning  
 - Performance agent: Optimization, caching, N+1 query detection
 - Architecture agent: Design patterns, separation of concerns
 - Parallel execution for comprehensive code improvement
@@ -125,22 +147,37 @@ claude-code-presentation/
 - **Developer Productivity**: 8-10 tasks/week → 25-30 tasks/week
 - **Code Quality**: 75% reduction in production bugs
 
-## 🎪 Presentation Flow (30-40 minutes)
+## 🎪 Presentation Flow (28 Slides, 30-40 minutes)
 
-1. **Hook (5 min)**: The "Code Monkeys" problem
-2. **Setup (5 min)**: Construction site analogy
-3. **Demo Planning Mode (5 min)**: Interactive demonstration
-4. **Demo CLAUDE.md (5 min)**: Context persistence
-5. **Demo Agents (8 min)**: Parallel specialist work
-6. **Demo Hooks & Commands (7 min)**: Automation pipeline
-7. **ROI & Future (5 min)**: Transformation vision
+### Part 1: Context (Slides 1-16)
+1. **Opening (1-3)**: Problem statement and AI evolution comparison
+2. **CLAUDE.md (4-6)**: Project DNA and context persistence  
+3. **Planning Mode (7-9)**: Strategic development demonstration
+4. **MCP Overview (10-11)**: Model Context Protocol explanation and demos
+5. **Context Limitations (12-13)**: Detective corkboard analogy
+6. **Subagents (14-16)**: Specialized agent architecture and live demo
+
+### Part 2: Helpful Tools (Slides 17-22)  
+7. **Hooks (17-19)**: Custom shell scripts and automation workflow
+8. **Slash Commands (20-22)**: Power user toolkit and interactive demo
+
+### Part 3: Workflow (Slides 23-27)
+9. **Terminal Integration (23)**: Native CLI tool access
+10. **Real Workflow (24)**: How this presentation was built
+11. **Agent Creation (25)**: From session to specialized agent
+
+### Part 4: Vision & Getting Started (Slides 26-28)
+12. **Future Vision (26)**: Developers as "Code Conductors"  
+13. **Getting Started (27)**: Practical implementation steps
+14. **Tips & Tricks (28)**: Power user techniques
 
 ## 🎯 Key Takeaways
 
-- "Stop coding. Start orchestrating."
-- "Your code, amplified."
-- "From keyboard warrior to code conductor."
-- "The 10x developer myth becomes reality through AI teammates."
+- **"Stop coding. Start orchestrating."**
+- **"Building software at the speed of thought"**
+- **"From keyboard warrior to code conductor"**  
+- **"Perception → Planning → Execution → Feedback Loop"**
+- **"The 10x developer myth becomes reality through AI teammates"**
 
 ## 🔧 Development
 
@@ -168,11 +205,30 @@ Creates `slides-export.pdf`
 
 ## 🚀 Deployment
 
-The presentation builds to static files and can be deployed to:
-- GitHub Pages
-- Netlify
-- Vercel
-- Any static hosting provider
+### GitHub Pages (Current Deployment)
+**Live at**: https://pat-unlearn.github.io/claude-code-presentation/
+
+#### Automatic Deployment
+- Push to `main` branch triggers GitHub Actions workflow
+- Builds Slidev presentation with correct base URL
+- Deploys to GitHub Pages (2-3 minutes total)
+
+#### Critical Configuration
+```typescript
+// vite.config.ts - REQUIRED for GitHub Pages subpath deployment
+export default defineConfig({
+  base: '/claude-code-presentation/',
+})
+```
+
+#### Setup Steps
+1. Enable GitHub Pages with "GitHub Actions" source
+2. Ensure `vite.config.ts` has correct `base` path
+3. Push changes to trigger deployment
+
+### Alternative Hosting
+- **Netlify/Vercel**: Easier setup, no base URL configuration needed
+- **Any static hosting**: Build outputs to `dist/` folder
 
 ## 🎨 Customization
 
@@ -180,7 +236,7 @@ The presentation builds to static files and can be deployed to:
 Edit `slides.md` for slide content changes.
 
 ### Modifying Interactions
-Update React components in `components/` directory.
+Update Vue.js components in `components/` directory using Composition API.
 
 ### Styling Changes
 Modify `style.css` for custom styling.

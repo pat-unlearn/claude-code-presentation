@@ -215,6 +215,13 @@ All components use Vue 3 Composition API with consistent styling patterns and st
 4. Test locally with `npm run dev`
 5. **ALWAYS use playwright-mcp to verify visual changes** - Essential for catching layout issues, formatting problems, and ensuring components render correctly
 6. Build for production with `npm run build`
+7. **For GitHub Pages**: Push to main branch for automatic deployment
+
+### GitHub Pages Development Notes
+- **Local vs Production**: Local dev uses root path `/`, production uses `/claude-code-presentation/`
+- **Base URL Testing**: Cannot fully test GitHub Pages paths locally
+- **Quick Verification**: Use playwright-mcp on deployed site after changes
+- **Asset Issues**: Always check browser console on deployed site for 404 errors
 
 ## Visual Development Guidelines
 - **playwright-mcp is MANDATORY** for all UI changes
@@ -225,12 +232,42 @@ All components use Vue 3 Composition API with consistent styling patterns and st
 - Test v-click animations and slide transitions
 
 ## Deployment
-- Static site generation via Slidev build
-- Can be hosted on any static hosting platform
-- PDF export available for offline sharing
-- Speaker notes included for presentation delivery
+
+### GitHub Pages Deployment (Recommended)
+**Repository**: https://github.com/pat-unlearn/claude-code-presentation  
+**Live URL**: https://pat-unlearn.github.io/claude-code-presentation/
+
+#### Setup Requirements
+1. **Vite Configuration**: Must include `base: '/repository-name/'` in `vite.config.ts`
+2. **GitHub Actions Workflow**: Automated build and deploy on push to main
+3. **Pages Settings**: Configure repository to use "GitHub Actions" as Pages source
+
+#### Critical Configuration
+```typescript
+// vite.config.ts
+export default defineConfig({
+  base: '/claude-code-presentation/', // REQUIRED for GitHub Pages subpath
+})
+```
+
+#### Common Issues & Solutions
+- **Asset 404 Errors**: Usually caused by missing or incorrect `base` configuration in vite.config.ts
+- **Blank Page**: Check browser console for 404s on CSS/JS files
+- **Build Failures**: Ensure Pages is enabled with "GitHub Actions" source before workflow runs
+
+#### Deployment Workflow
+1. Push changes to `main` branch
+2. GitHub Actions automatically builds via `npm run build`
+3. Deploys to GitHub Pages (2-3 minute total time)
+4. Available at `https://username.github.io/repository-name/`
+
+### Alternative Hosting
+- **Netlify/Vercel**: Static site generation via Slidev build (easier setup, no base URL needed)
+- **PDF Export**: Available for offline sharing via `npm run export`
+- **Local Hosting**: Speaker notes included for presentation delivery
 
 ---
-Last Updated: 2024-01-15
-Version: 1.0
+Last Updated: 2025-08-11
+Version: 2.0
 Presentation Duration: ~30-40 minutes
+GitHub Pages: https://pat-unlearn.github.io/claude-code-presentation/
