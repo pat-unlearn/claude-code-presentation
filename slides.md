@@ -103,7 +103,7 @@ layout: default
 
 <div v-click class="mt-6 p-4 bg-blue-50 rounded border-l-4 border-blue-400 text-center">
   <p class="text-blue-800 font-semibold">
-    🚀 <strong>Claude Code:</strong> AI development assistant that researches, thinks, and plans prior to execution
+    🚀 <strong>Claude Code:</strong> Perception → Planning → Execution → Feedback Loop <br>AI development assistant that researches, thinks, and plans prior to execution
   </p>
 </div>
 
@@ -119,7 +119,7 @@ class: text-center font-sans
 ## <span class="text-gray-600 font-medium">CLAUDE.md, Planning, MCP & Specialized Agents</span>
 
 <!--
-arstarst
+a
 -->
 
 ---
@@ -270,6 +270,7 @@ layout: default
     <h3 class="font-bold mb-3 text-green-800">🤖 Claude + MCP</h3>
     <ul class="space-y-2 text-sm text-green-700">
       <li>playwright-mcp for browser automation</li>
+      <li>figma-mcp for precise design specifications</li>
       <li>serena-mcp for project indexing</li>
       <li>xcodebuild-mcp to connect Claude to phone simulator</li>
       <li>Each server adds domain expertise</li>
@@ -404,6 +405,17 @@ layout: default
 <AgentDashboard />
 
 ---
+layout: section
+transition: slide-left
+background: linear-gradient(135deg, #eff6ff 0%, #dbeafe 50%, #f8fafc 100%)
+class: text-center font-sans
+---
+
+# <span class="text-primary-700 font-bold">Part 2:</span> Helpful Tools
+
+## <span class="text-gray-600 font-medium">Hooks, Slash Commands, CLI Tools</span>
+
+---
 layout: center
 ---
 
@@ -437,17 +449,6 @@ layout: center
 </div>
 
 </v-clicks>
-
----
-layout: section
-transition: slide-left
-background: linear-gradient(135deg, #eff6ff 0%, #dbeafe 50%, #f8fafc 100%)
-class: text-center font-sans
----
-
-# <span class="text-primary-700 font-bold">Part 2:</span> Helpful Tools
-
-## <span class="text-gray-600 font-medium">Hooks, Slash Commands, CLI Tools</span>
 
 
 ---
@@ -512,17 +513,27 @@ layout: default
 
 <div class="space-y-4">
 
+<v-click>
+
 **The Terminal Advantage:**
-- **Direct tool access** - Runs git, docker, npm natively
-- **Tool output parsing** - Understands error messages
+- **Direct tool access** - Runs git, docker, npm, gh, awscli, kubectl etc natively
+- **Tool output parsing** - Understands error messages from the standard out
 - **Workflow continuity** - No context switching
 - **Custom CLI commands** - Create your own CLI commands for Claude to re-use
 
+</v-click>
+
+<v-click>
+
 **Common tools it excels with:**
 - Git • Docker • Kubernetes • npm/yarn • pytest • curl • jq
+
+</v-click>
 </div>
 
 <div class="space-y-4">
+
+<v-click>
 
 **Real Workflow Example:**
 ```bash
@@ -542,6 +553,7 @@ $ claude "create feature branch and add proper logging with tests"
 Feature branch created with comprehensive logging setup.
 ```
 
+</v-click>
 
 </div>
 
