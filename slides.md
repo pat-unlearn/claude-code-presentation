@@ -55,41 +55,39 @@ transition: slide-left
 layout: default
 ---
 
-# The Development Reality
+# The AI Development Reality
 ## Why Context-Aware AI Changes Everything
 
 <div class="grid grid-cols-2 gap-8 mt-6">
-
+<div>
 <div v-click class="space-y-6">
 
-**The Problem:**
-- **~23 minutes** to regain focus after interruption*
-- **70+ bugs** per 1,000 lines of code on average
+**The AI Problem:**
 - AI forgets your project context between sessions
+- Breaking changes across files
 - Generic responses don't fit your codebase
+- Reinventing the wheel
+- Endless debug loop
 
-<div class="p-4 bg-red-50 rounded-lg border-l-4 border-red-400">
+</div>
+<div v-click class="p-4 bg-red-50 rounded-lg border-l-4 border-red-400">
   <p class="text-red-800 font-semibold">
     💡 AI without context is just expensive autocomplete
   </p>
 </div>
-
 </div>
+
 
 <div v-click class="space-y-6">
 
-**What makes it different:**
+**What makes Claude Code agents different:**
 - Project awareness & team standards
 - Business context & domain knowledge  
 - Persistent memory across sessions
-- Extensibility
+- Extensibility & tooling
 
 </div>
 
-</div>
-
-<div class="mt-6 text-xs text-gray-500">
-  *UC Irvine research (2008) - Gloria Mark study on workplace interruptions
 </div>
 
 ---
@@ -99,9 +97,9 @@ background: linear-gradient(135deg, #dbeafe 0%, #f0f9ff 50%, #ffffff 100%)
 class: text-center font-sans
 ---
 
-# <span class="text-primary-700 font-bold">Part 1:</span> Context Features
+# <span class="text-primary-700 font-bold">Part 1:</span> Context
 
-## <span class="text-gray-600 font-medium">CLAUDE.md, Planning, MCP & AI Agents</span>
+## <span class="text-gray-600 font-medium">CLAUDE.md, Planning, MCP & Specialized Agents</span>
 
 ---
 layout: default
@@ -173,12 +171,12 @@ layout: default
 <div class="grid grid-cols-2 gap-8 mt-4">
 <v-clicks>
   <div class="p-4 bg-red-50 border-l-4 border-red-400 rounded-lg">
-    <h3 class="font-bold mb-3 text-red-800">⚡ Traditional Approach</h3>
+    <h3 class="font-bold mb-3 text-red-800">⚡ Traditional Prompt</h3>
     <ul class="space-y-2 text-sm">
-      <li>Jump straight into coding</li>
+      <li>Prompt your agent to write code</li>
       <li>Discover requirements as you go</li>
       <li>Hit unexpected edge cases</li>
-      <li>Refactor and debug extensively</li>
+      <li>Debug loop hell - "You're absolutely right!"</li>
     </ul>
     <div class="mt-4 p-3 bg-red-100 rounded text-red-800 font-semibold text-center">
       ⏱️ Time: 4-6 hours + debugging
@@ -279,14 +277,52 @@ layout: default
 layout: default
 ---
 
-# Subagents: Your Specialized Team
-## Focused AI Assistants for Complex Tasks
+# The Context Window Challenge
+## Understanding LLM Memory Limitations
+
+<v-clicks>
+
+**LLMs Have Fixed-Size Memory**
+- Context window = fixed-size buffer in memory
+- Contains: past messages + model responses + system instructions
+- Hard limit: cannot "see" anything beyond the cutoff point
+- **Not like human memory** - no external recall or storage
+
+**When the Buffer Fills Up...**
+- New information pushes out old information
+- Model literally "forgets" earlier conversation parts
+- Long sessions become less coherent over time
+- Context gets fragmented and disconnected
+
+</v-clicks>
+
+<div v-click class="mt-6 p-4 bg-red-50 rounded border-l-4 border-red-400 text-center">
+  <p class="text-red-800 font-semibold">
+    ⚠️ <strong>The Problem:</strong> LLMs can't maintain perfect memory across long conversations
+  </p>
+</div>
+
+---
+layout: default
+---
+
+## The Detective's Corkboard Analogy
+### How LLMs Manage Memory Constraints
+
+<DetectiveCorkboard />
+
+---
+layout: default
+---
+
+## Subagents: Your Specialized Team
+### Focused AI Assistants for Complex Tasks
 
 <v-clicks>
 
 **What are Subagents?**
-- **Specialized AI assistants** with focused expertise
-- **Isolated context windows** for better concentration  
+- **Specialized AI assistants** multiple detective each with an area of expertise
+- **Isolated context windows** each detective has their own board
 - **Limited tool access** for security and reliability
 - **Parallel execution** for faster task completion
 
@@ -294,7 +330,7 @@ layout: default
 - 🎯 **Domain Expertise** - Each agent is an expert in their field
 - 🔄 **Concurrent Processing** - Work on multiple aspects simultaneously
 - 🔒 **Secure Isolation** - Agents can't interfere with each other
-- 📊 **Quality Assurance** - Validation agents enforce standards
+- 📊 **Context Windows** - More meaningful summaries since context is all relevant
 
 </v-clicks>
 
@@ -308,8 +344,8 @@ layout: default
 layout: default
 ---
 
-# Subagent Architecture
-## How Specialized Agents Work
+## Subagent Architecture
+### How Specialized Agents Work
 
 <div class="grid grid-cols-2 gap-6 mt-4">
   <div class="p-4 bg-blue-50 rounded-lg border-l-4 border-blue-400">
@@ -497,7 +533,7 @@ background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 50%, #f1f5f9 100%)
 class: text-center font-sans
 ---
 
-# <span class="text-primary-700 font-bold">Part 3:</span> What's Next
+# <span class="text-primary-700 font-bold">Part 3:</span> Workflow
 
 ## <span class="text-gray-600 font-medium">Your Path to Agentic Development</span>
 
@@ -571,13 +607,13 @@ layout: center
   </div>
   
   <div class="p-4 card-clean border-l-4 border-unlearn-blue">
-    <div class="font-bold text-gray-800 mb-2">3. Create your CLAUDE.md file</div>
+    <div class="font-bold text-gray-800 mb-2">3. Populate your CLAUDE.md file</div>
     <span class="text-sm text-gray-600">Add project context and standards</span>
   </div>
   
   <div class="p-4 card-clean border-l-4 border-unlearn-blue">
     <div class="font-bold text-gray-800 mb-2">4. Start orchestrating</div>
-    <code class="text-sm bg-gray-50 px-2 py-1 rounded text-unlearn-blue">claude "Your first task"</code>
+    <code class="text-sm bg-gray-50 px-2 py-1 rounded text-unlearn-blue">claude</code>
   </div>
 </div>
 
@@ -588,23 +624,31 @@ layout: center
 layout: center
 ---
 
-# Key Takeaways
+# Tips and tricks
 
 <div class="mt-6 space-y-3">
-  <div v-click class="p-4 card-clean border-l-4 border-unlearn-blue">
-    <strong class="text-gray-800 text-base">The future of development is here. Today.</strong>
+  <div v-click class="p-4 card-clean border-l-4 border-purple-500">
+    <strong class="text-gray-800 text-base">Hashtags #:</strong> Can be used to add a concept directly to CLAUDE.md
   </div>
   
-  <div v-click class="p-4 card-clean border-l-4 border-purple-500">
-    <strong class="text-gray-800 text-base">Less coding. More orchestration.</strong>
+  <div v-click class="p-4 card-clean border-l-4 border-unlearn-blue">
+    <strong class="text-gray-800 text-base">Shift + Tab:</strong> Cycles between modes: normal, accepts edits, planning, bypass permissions
   </div>
   
   <div v-click class="p-4 card-clean border-l-4 border-green-500">
-    <strong class="text-gray-800 text-base">Transform completed workflows into specialized agents.</strong>
+    <strong class="text-gray-800 text-base">Memorialized Workflows:</strong> Completed workflows can be preserved in a specialized agent or command.
   </div>
   
+  <div v-click class="p-4 card-clean border-l-4 border-yellow-500">
+    <strong class="text-gray-800 text-base">Claude knows Claude:</strong> Create an agent to optimize your agents, hooks, commands, MCP servers
+  </div>
+
   <div v-click class="p-4 card-clean border-l-4 border-orange-500">
-    <strong class="text-gray-800 text-base">Prompt your agents. Get coffee. Pretend it was hard.</strong>
+    <strong class="text-gray-800 text-base">Orchestrate:</strong> Less coding, more orchestration. Utilize orchestration agents to delegate tasks.
+  </div>
+  
+  <div v-click class="p-4 card-clean border-l-4 border-red-500">
+    <strong class="text-gray-800 text-base">Reference Agents and docs in CLAUDE.md:</strong> Submit a prompt. Get coffee. Pretend it was hard.
   </div>
 </div>
 

@@ -8,14 +8,8 @@
         <div class="bg-gray-900 rounded-lg p-3 flex-1 overflow-y-auto font-mono text-xs scroll-smooth max-h-72">
           <div class="text-green-400 mb-2">📄 CLAUDE.md</div>
           <div class="text-gray-300">
-            <div v-for="(line, index) in displayLines"
-                 :key="index"
-                 :class="['transition-all duration-500',
-                         index <= currentLine ? 'opacity-100' : 'opacity-30',
-                         line === '' ? 'h-4' : '']">
-              {{ line === '' ? '\u00A0' : line }}
-            </div>
-            <div v-if="isTyping" class="inline-block w-2 h-4 bg-green-400 animate-pulse"></div>
+            <span v-html="typedText"></span>
+            <span v-if="isTyping" class="inline-block w-2 h-4 bg-green-400 animate-pulse">|</span>
           </div>
         </div>
 
@@ -58,81 +52,91 @@
 </template>
 
 <script setup>
-import { ref } from 'vue'
+import { ref, onMounted } from 'vue'
 
-const currentLine = ref(-1)
 const isTyping = ref(false)
+const typedText = ref('')
+const hasStarted = ref(false)
 
-const claudeMdContent = [
-  '# E-Commerce Platform',
-  '',
-  '## Project Overview',
-  'Modern e-commerce platform built with FastAPI microservices.',
-  'Handles high-traffic sales with real-time inventory management.',
-  '',
-  '## Architecture Standards',
-  '- **Backend**: FastAPI with Python 3.11+',
-  '- **Database**: PostgreSQL with Redis caching',
-  '- **Frontend**: React with Next.js',
-  '- **Testing**: pytest + httpx for API tests',
-  '- **Deployment**: Docker + Kubernetes',
-  '',
-  '## Coding Conventions',
-  '- Use black + ruff for formatting and linting',
-  '- All functions must have type hints',
-  '- Minimum 90% test coverage with pytest-cov',
-  '- Follow conventional commit format',
-  '',
-  '## Business Rules',
-  '- Free shipping on orders over $75',
-  '- Tax calculation based on customer location',
-  '- Inventory syncs every 5 minutes via Celery',
-  '- Price changes require manager approval',
-  '',
-  '## Security Requirements',
-  '- All API endpoints require JWT authentication',
-  '- Pydantic models for input validation',
-  '- Rate limiting: 100 requests/minute per user',
-  '- PCI compliance for payment processing',
-  '',
-  '## Development Workflow',
-  '- Feature branches from main',
-  '- Utilize orchestration agents',
-  '- All tests must pass before merge',
-  '- Deploy to staging before production'
-]
+const claudeMdContentText = `# E-Commerce Platform
 
-const displayLines = ref([])
+## Project Overview
+Modern e-commerce platform built with FastAPI microservices.
+Handles high-traffic sales with real-time inventory management.
+
+## Architecture Standards
+- **Backend**: FastAPI with Python 3.11+
+- **Database**: PostgreSQL with Redis caching
+- **Frontend**: React with Next.js
+- **Testing**: pytest + httpx for API tests
+- **Deployment**: Docker + Kubernetes
+
+## Coding Conventions
+- Use black + ruff for formatting and linting
+- All functions must have type hints
+- Minimum 90% test coverage with pytest-cov
+- Follow conventional commit format
+
+## Business Rules
+- Free shipping on orders over $75
+- Tax calculation based on customer location
+- Inventory syncs every 5 minutes via Celery
+- Price changes require manager approval
+
+## Security Requirements
+- All API endpoints require JWT authentication
+- Pydantic models for input validation
+- Rate limiting: 100 requests/minute per user
+- PCI compliance for payment processing
+
+## Development Workflow
+- Feature branches from main
+- Utilize orchestration agents
+- All tests must pass before merge
+- Deploy to staging before production`
+
+// Convert the text content to HTML with proper line breaks
+const fullTextWithBreaks = claudeMdContentText.replace(/\n/g, '<br>')
 
 const startDemo = () => {
-  if (isTyping.value) return
+  if (isTyping.value || hasStarted.value) return
 
+  hasStarted.value = true
   isTyping.value = true
-  currentLine.value = -1
-  displayLines.value = [...claudeMdContent]
+  typedText.value = ''
 
-  const showLine = () => {
-    currentLine.value++
-    if (currentLine.value < claudeMdContent.length) {
-      setTimeout(showLine, 200)
+  let currentIndex = 0
+  const typeSpeed = 25 // milliseconds per character
+
+  const typeInterval = setInterval(() => {
+    if (currentIndex < fullTextWithBreaks.length) {
+      typedText.value += fullTextWithBreaks[currentIndex]
+      currentIndex++
+      
       // Auto-scroll to bottom as new content appears
       setTimeout(() => {
         const terminal = document.querySelector('.bg-gray-900')
         if (terminal) {
           terminal.scrollTop = terminal.scrollHeight
         }
-      }, 250)
+      }, 50)
     } else {
       isTyping.value = false
+      clearInterval(typeInterval)
     }
-  }
-
-  setTimeout(showLine, 500)
+  }, typeSpeed)
 }
 
 const reset = () => {
-  currentLine.value = -1
   isTyping.value = false
-  displayLines.value = []
+  typedText.value = ''
+  hasStarted.value = false
 }
+
+// Auto-start the typing animation when component mounts (after a small delay)
+onMounted(() => {
+  setTimeout(() => {
+    startDemo()
+  }, 1500)
+})
 </script>

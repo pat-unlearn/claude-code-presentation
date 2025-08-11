@@ -58,11 +58,6 @@
           <h5 class="font-semibold text-orange-800 text-xs">📋 Implementation Plan</h5>
           <p class="text-orange-700" style="font-size: 14px;">Development strategy</p>
         </div>
-
-        <div v-if="showResults" class="px-2 py-1 bg-green-100 rounded border-l-4 border-green-500">
-          <h5 class="font-semibold text-green-800 text-xs">✨ Ready to Execute</h5>
-          <p class="text-green-700" style="font-size: 14px;">Time to code!</p>
-        </div>
       </div>
     </div>
   </div>
