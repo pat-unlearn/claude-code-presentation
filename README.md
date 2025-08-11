@@ -252,14 +252,6 @@ Add new demo files to `demos/` directory.
 - Engage audience with the "what if everyone had this power?" question
 - End with clear call-to-action for getting started
 
-## 🤝 Contributing
-
-1. Fork the repository
-2. Create a feature branch
-3. Make your changes
-4. Test the presentation locally
-5. Submit a pull request
-
 ## 📄 License
 
 MIT License - Feel free to adapt this presentation for your own team demos.
